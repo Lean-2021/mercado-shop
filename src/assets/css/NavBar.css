@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap'); /*fuente lora de google fonts*/
+
+.navbar{
+    background: yellow;
+    box-shadow: 0 1px 2px grey;
+}
+.nav-title{
+    font-family: 'Lora', serif; /* fuente de titulo mercado shop */
+    font-size:24px;
+    letter-spacing: 1px; 
+}
+.navbar-nav{
+    margin-left:auto;
+}
+/* tamaño de fuente de items del nav */
+.nav-item{
+    font-size: 18px;
+}
+.dropdown-menu{
+    background: black;
+    width:80px;
+    margin-left:-25px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 3px 3px 3px gray;
+}
+/* sub.menu categorias y marcas */
+.menu-categorias::before{
+    position:absolute;
+    content:'🠹';
+    color:black;
+    z-index:-1;
+    font-size:50px;
+    margin-top:-48px;
+    margin-left:109px;
+}
+.dropdown-item{
+    color:white;
+    text-align: center;
+}
+.menu-marcas::before{
+    position:absolute;
+    content:'🠹';
+    color:black;
+    z-index:-1;
+    font-size:50px;
+    margin-top:-48px;
+    margin-left:82px;
+}
