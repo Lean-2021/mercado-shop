@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; //importar estilos de bootstrap
 import 'bootstrap';  //importar javascript de bootstrap
 import '../assets/css/NavBar.css'; // importar archivo de estilos de navbar
 import logo from '../assets/image/menu.png';  // importar logo de la web desde assets imagenes
+import CartWidget from './CartWidget';
 
 const NavBar =()=>{
     return(
@@ -52,10 +53,11 @@ const NavBar =()=>{
                     <form className="d-flex">
                         <button className="btn btn-outline-success me-4">Ingresar</button>
                         <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"title="Buscar Productos" />
-                        <button className="btn btn-primary" type="button">Buscar</button>
+                        <button className="btn btn-primary"type="button">Buscar</button>
                     </form>
                 </div>
             </div>
+            <CartWidget cantidad="0" />
         </nav>
     );
 }
