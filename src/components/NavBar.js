@@ -57,7 +57,7 @@ const NavBar =()=>{
                     </form>
                 </div>
             </div>
-            <CartWidget cantidad="0" />
+            <CartWidget />
         </nav>
     );
 }
