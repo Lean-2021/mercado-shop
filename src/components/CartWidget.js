@@ -2,6 +2,7 @@ import style from '../assets/css/CartWidget.module.css';
 import Badge from '@mui/material/Badge'; 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faShopify} from '@fortawesome/free-brands-svg-icons';
+
 const CartWidget =()=>{
     return(
         <div>

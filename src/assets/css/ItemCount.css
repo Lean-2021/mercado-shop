@@ -1,0 +1,20 @@
+/* contenedor de cantidad */
+.count{
+    background-color: lightgray;
+    border:2px solid rgb(212, 209, 209);
+    padding:15px;
+    border-radius: 10px;
+    width:250px;
+    box-shadow: 2px 2px 4px grey;
+}
+/* estilo numero de cantidad*/
+.textCantidad{
+    width:80px;
+    color:black;
+    font-weight: bold;
+}
+/* title  cantidad */
+.titleCantidad{
+    color:black;
+    font-weight: bold;
+}
