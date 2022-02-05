@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer greeting ="Bienvenidos al proyecto Mercado - Shop / Esta es la lista de items seleccionados"/>
+      <ItemListContainer/>
     </>
   );
 }
