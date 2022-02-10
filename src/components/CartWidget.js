@@ -6,7 +6,7 @@ import {faShopify} from '@fortawesome/free-brands-svg-icons';
 const CartWidget =()=>{
     return(
         <div>
-            <Badge badgeContent={4} color="error"className='ms-1 me-4'>
+            <Badge badgeContent={4} color="error"className='ms-4 me-4'>
                 <FontAwesomeIcon icon={faShopify} className={style.cartShop}/>      
             </Badge>
         </div>

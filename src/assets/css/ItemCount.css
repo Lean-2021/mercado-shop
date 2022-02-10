@@ -9,6 +9,7 @@
 }
 /* estilo numero de cantidad*/
 .textCantidad{
+    font-size:24px;
     width:80px;
     color:black;
     font-weight: bold;

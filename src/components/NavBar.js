@@ -56,10 +56,10 @@ const NavBar =()=>{
                         <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"title="Buscar Productos"/> 
                         
                         <button className="btn btn-primary"type="button"><SearchIcon /></button>
+                        <CartWidget />
                     </form>
                 </div>
             </div>
-            <CartWidget />
         </nav>
     );
 }

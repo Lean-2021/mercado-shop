@@ -10,7 +10,7 @@ import '../assets/css/Item.css';
 const Item =(props) =>{
     return(
         <div className="Card">
-            <Card sx={{ width: 210 }} className="card-items">
+            <Card sx={{ width: 220 }} className="card-items">
                 <CardActionArea>
                     <CardMedia
                         component="img"

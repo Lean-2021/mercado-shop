@@ -1,0 +1,48 @@
+.card-item-detail{
+    padding:50px;
+    margin-top:30px;
+    box-shadow:1px 1px 4px 2px grey; 
+}
+.body-description{
+    margin-left:15%;
+}
+.text-categoria{
+    font-size:16px;
+    color:blue;
+    font-weight: bold;
+}
+.text-marca{
+    font-size:35px;
+    font-weight: bold;
+}
+.text-modelo{
+    font-size:20px;
+}
+.text-description{
+    color:black;
+    margin-top: 30px;
+    margin-left:-10px;
+}
+.text-precio{
+    font-size:26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px grey;
+}
+.text-stock{
+    color:blue;
+    font-weight: bold;
+    font-size: 18px;
+}
+.imagen-description:hover{
+    transform:scale(1.2);
+    transition: all 1s;
+}
+
+/* para dispositivos mobiles */
+@media only screen and (max-width:500px){
+    .body-description{
+        margin-top:10%;
+        margin-left:-10%;
+    }
+}

@@ -19,12 +19,16 @@ const ItemCount =(props) =>{
         }
     }
     return(
-        <div className="count container text-center mt-5">
-            <h5 className="titleCantidad">Cantidad</h5>
-            <IconButton variant="contained"size="small"onClick={removeCantidad}><RemoveIcon fontSize="large"/></IconButton>
-            <span className="ms-4 me-4 textCantidad">{agregarCantidad}</span>
-            <IconButton variant="contained"size="small"onClick={addCantidad}><AddIcon fontSize="large"/></IconButton>
-            <Button variant="contained"color="secondary"className="mt-3">Agregar a Carrito</Button>
+        <div className="count container text-center ms-0 mt-5">
+            <div className="row">
+                <div className="col-md-12">
+                    <h5 className="titleCantidad">Cantidad</h5>
+                    <IconButton variant="contained"size="small"onClick={removeCantidad}><RemoveIcon fontSize="large"/></IconButton>
+                    <span className="ms-4 me-4 textCantidad">{agregarCantidad}</span>
+                    <IconButton variant="contained"size="small"onClick={addCantidad}><AddIcon fontSize="large"/></IconButton>
+                    <Button variant="contained"color="secondary"className="mt-3">Agregar a Carrito</Button>
+                </div>
+            </div>
         </div>
     );
 }
