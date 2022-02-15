@@ -3,28 +3,33 @@ import PropTypes from 'prop-types';
 import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import '../assets/css/CircularProgressWithLabel.css';
+
+//componente para simular la carga de la base de datos de productos 
 
 function CircularProgressWithLabel(props) {
   return (
-    <Box sx={{ position: 'relative', display: 'inline-flex',marginTop:'20%',transform:'scale(3.5)',marginLeft:'45%'}}>  
-      <CircularProgress variant="determinate" {...props}/>
-      <Box
-        sx={{
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          position: 'absolute',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Typography variant="caption" component="div" color="text.secondary">
-          {`${Math.round(props.value)}%`}
-        </Typography>
+    <section className="circle-progress">
+      <Box sx={{ position: 'relative', display: 'inline-flex',transform:'scale(3.5)'}}>  
+        <CircularProgress variant="determinate" {...props}/>
+        <Box
+          sx={{
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            position: 'absolute',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Typography variant="caption" component="div" color="text.secondary">
+            {`${Math.round(props.value)}%`}
+          </Typography>
+        </Box>
       </Box>
-    </Box>
+    </section>
   );
 }
 
@@ -49,5 +54,5 @@ export default function CircularStatic() {
     };
   }, []);
 
-  return <CircularProgressWithLabel value={progress} />;
+  return <CircularProgressWithLabel value={progress}/>;
 }

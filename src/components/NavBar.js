@@ -4,50 +4,51 @@ import '../assets/css/NavBar.css'; // importar archivo de estilos de navbar
 import logo from '../assets/image/menu.png';  // importar logo de la web desde assets imagenes
 import CartWidget from './CartWidget';
 import SearchIcon from '@mui/icons-material/Search';
+import {Link,NavLink} from 'react-router-dom';
 
 const NavBar =()=>{
     return(
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-                <a className="navbar-brand nav-title" href="/"><img src={logo} width="35"alt="logo web"className="me-3"/>Mercado Shop</a>
+                <Link to='/'className="navbar-brand nav-title"><img src={logo} width="35"alt="logo web"className="me-3 logoWeb"/>Mercado Shop</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" aria-current="page" href="/">Novedades</a>
+                            <NavLink to='/category/novedades'activeClassName="active"className="nav-link" aria-current="page">Novedades</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Ofertas</a>
+                            <NavLink to='/category/ofertas'activeClassName="active"className="nav-link">Ofertas</NavLink>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle"href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li className="nav-link dropdown-toggle"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categorias
-                            </a>
+                            </li>
                             <ul className="dropdown-menu menu-categorias mt-2"aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="/">Conectividad</a></li>
-                                <li><a className="dropdown-item" href="/">Desktop</a></li>           
-                                <li><a className="dropdown-item" href="/">Impresoras</a></li>
-                                <li><a className="dropdown-item" href="/">Monitores</a></li>
-                                <li><a className="dropdown-item" href="/">Notebook</a></li>
+                                <li><NavLink to='/category/conectividad'className="dropdown-item">Conectividad</NavLink></li>
+                                <li><NavLink to='/category/desktop'className="dropdown-item">Desktop</NavLink></li>           
+                                <li><NavLink to='/category/impresoras' className="dropdown-item">Impresoras</NavLink></li>
+                                <li><NavLink to='/category/monitores' className="dropdown-item">Monitores</NavLink></li>
+                                <li><NavLink to='/category/notebook' className="dropdown-item">Notebook</NavLink></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle"href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Marcas
-                            </a>
+                            </li>
                             <ul className="dropdown-menu menu-marcas mt-2"aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="/">Brother</a></li>
-                                <li><a className="dropdown-item" href="/">Dell</a></li>           
-                                <li><a className="dropdown-item" href="/">Epson</a></li>
-                                <li><a className="dropdown-item" href="/">HP</a></li>
-                                <li><a className="dropdown-item" href="/">Lenovo</a></li>
-                                <li><a className="dropdown-item" href="/">Mikrotik</a></li>
-                                <li><a className="dropdown-item" href="/">Samsung</a></li>
-                                <li><a className="dropdown-item" href="/">Tp-Link</a></li>
-                                <li><a className="dropdown-item" href="/">Ubiquiti</a></li>
-
+                                <li><NavLink to='/category/brother'className="dropdown-item">Brother</NavLink></li>
+                                <li><NavLink to='/category/dell'className="dropdown-item">Dell</NavLink></li>           
+                                <li><NavLink to='/category/epson'className="dropdown-item">Epson</NavLink></li>
+                                <li><NavLink to="/category/hp"className="dropdown-item">HP</NavLink></li>
+                                <li><NavLink to="/category/lenovo"className="dropdown-item">Lenovo</NavLink></li>
+                                <li><NavLink to="/category/mercusys"className="dropdown-item">Mercusys</NavLink></li>
+                                <li><NavLink to='/category/mikrotik'className="dropdown-item">Mikrotik</NavLink></li>
+                                <li><NavLink to='/category/samsung'className="dropdown-item">Samsung</NavLink></li>
+                                <li><NavLink to='/category/tp-Link'className="dropdown-item">Tp-Link</NavLink></li>
+                                <li><NavLink to='/category/ubiquiti'className="dropdown-item">Ubiquiti</NavLink></li>
                             </ul>
                         </li>
                     </ul>

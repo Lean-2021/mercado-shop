@@ -1,9 +1,14 @@
 import ItemCount from "./ItemCount";
 import '../assets/css/ItemDetail.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import{Link} from 'react-router-dom';
+
+
 export const ItemDetail =(props)=>{
     return(
-        <article>
-            <div className="card mb-3 card-item-detail">
+        <article className="container"style={{textAlign:'start'}}>
+            <div className="card mb-3 card-item-detail"><Link to='/' className="text-end"><span className="btnClose"><FontAwesomeIcon icon={faTimes}color="grey"className="boton"/></span></Link>
                 <div className="row g-0">
                     <div className="col-md-4">
                         <img src={props.imagen} className="img-fluid rounded-start imagen-description" alt="Imagen Producto"/>

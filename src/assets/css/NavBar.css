@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap'); /*fuente lora de google fonts*/
 
+.logoWeb:hover{
+    transform: rotate(360deg);
+    transition: all 1.5s;
+}
 .navbar{
     background: yellow;
     box-shadow: 0 1px 2px grey;
@@ -15,6 +19,9 @@
 /* tamaño de fuente de items del nav */
 .nav-item{
     font-size: 18px;
+}
+.active{      /* link activo del navbar*/
+    font-weight: bolder;
 }
 .dropdown-menu{
     background: black;
@@ -36,6 +43,7 @@
 .dropdown-item{
     color:white;
     text-align: center;
+    text-decoration: none;
 }
 .menu-marcas::before{
     position:absolute;
@@ -45,4 +53,10 @@
     font-size:50px;
     margin-top:-48px;
     margin-left:82px;
+}
+@media only screen and (max-width:500px){
+    .dropdown-menu{
+        width:370px;
+        margin-bottom: 30px;
+    }
 }

@@ -1,18 +1,27 @@
+.btnClose{
+    font-size: 30px;
+}
+.boton:hover{
+    transform: scale(1.1);
+    transition: all 1s;
+    color:black;
+}
+
 .card-item-detail{
     padding:50px;
-    margin-top:30px;
-    box-shadow:1px 1px 4px 2px grey; 
+    margin-top:70px;
+    box-shadow:1px 1px 4px 2px black; 
 }
 .body-description{
     margin-left:15%;
 }
 .text-categoria{
-    font-size:16px;
+    font-size:18px;
     color:blue;
     font-weight: bold;
 }
 .text-marca{
-    font-size:35px;
+    font-size:40px;
     font-weight: bold;
 }
 .text-modelo{
@@ -22,9 +31,10 @@
     color:black;
     margin-top: 30px;
     margin-left:-10px;
+    font-size: 20px;
 }
 .text-precio{
-    font-size:26px;
+    font-size:30px;
     font-weight: bold;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px grey;
@@ -43,6 +53,11 @@
 @media only screen and (max-width:500px){
     .body-description{
         margin-top:10%;
-        margin-left:-10%;
+        margin-left:-15%;
+    }
+    .card-item-detail{
+        text-align:center;
+        margin-left:-5%;
+        width:110%;
     }
 }

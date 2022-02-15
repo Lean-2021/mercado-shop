@@ -1,0 +1,84 @@
+.section-footer{
+    background-color: rgba(100, 100, 100,0.4);
+    box-shadow: 0px -1px 5px 1px rgb(41, 39, 39);
+    height: 250px;
+    margin-top: 12%;
+}
+/* title footer */
+.footer-title{
+    font-family: 'Lora', serif; /* fuente de titulo mercado shop */
+    font-size:34px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey; 
+    vertical-align: middle;
+    color:black;
+}
+.footer-title-link{
+    text-decoration: none;
+}
+.footer-title:hover{
+    letter-spacing: 3px;
+    transition: all 1s;
+}
+/* imagen title footer */
+.footer-title-img{
+    vertical-align: middle;
+    opacity: 0.7;
+}
+/* link de nav footer */
+.footer-nav{
+    margin-left:-5% ;
+    display: flex;
+    flex-flow: row wrap;
+    list-style:none;
+    justify-content: space-around;
+}
+.footer-copyright{
+    font-weight: bold;
+    vertical-align: middle;
+    color:lightcyan;
+    text-shadow: 2px 2px 3px black;
+}
+.copyright{
+    font-weight: bolder;
+    color:black;
+}
+/* efectos items nav footer */
+.footer-nav .nav-link:hover{
+    color:bisque;
+    text-shadow: 2px 2px 3px black;
+    transform: scale(1.1);
+}
+/* link activo footer */
+.footer-link-active{
+    font-weight: bolder;
+}
+.footer-nav .nav-link{
+    color:rgba(24, 23, 23, 0.6);
+    font-size: 22px;
+}
+.footer-link-inactive{
+    font-weight: lighter;
+}
+/* Resoluciones pequeñas */
+@media only screen and (max-width:500px){
+    .section-footer{
+        margin-top:10%;
+        height:350px;
+    }
+    .footer-title{
+        font-size: 30px;
+        margin-left:-5px;
+    }
+    .footer-title-img{
+        width:35px;
+        margin-left:-10px;
+    }
+    .footer-nav{
+        flex-direction: column;
+    }
+    .copyright{
+        margin-left: -20px;
+    }
+}
