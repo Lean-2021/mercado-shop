@@ -8,9 +8,10 @@ import { useState } from "react";
 
 const ItemCount =(props) =>{
     const [agregarCantidad, setAgregarCantidad] = useState(parseInt(props.cantidad));
+
     const addCantidad = ()=>{        //sumar cantidad hasta 5
-        if (agregarCantidad <props.stock){
-                setAgregarCantidad(agregarCantidad +1)        
+        if (agregarCantidad <props.stock){    
+            setAgregarCantidad(agregarCantidad+1)
         }
     }
     const removeCantidad =() =>{  //restar cantidad hasta 1
@@ -18,6 +19,10 @@ const ItemCount =(props) =>{
             setAgregarCantidad(agregarCantidad -1)
         }
     }
+    const compra =()=>{
+        props.onAdd(agregarCantidad)  //llamar a funcion onAdd de ItemDetail con la cantidad seleccionada
+    }
+    
     return(
         <div className="count container text-center ms-0 mt-5">
             <div className="row">
@@ -26,10 +31,15 @@ const ItemCount =(props) =>{
                     <IconButton variant="contained"size="small"onClick={removeCantidad}><RemoveIcon fontSize="large"/></IconButton>
                     <span className="ms-4 me-4 textCantidad">{agregarCantidad}</span>
                     <IconButton variant="contained"size="small"onClick={addCantidad}><AddIcon fontSize="large"/></IconButton>
-                    <Button variant="contained"color="secondary"className="mt-3">Agregar a Carrito</Button>
+                    {
+                        agregarCantidad === 0 ? <Button variant="contained"color="secondary"className="mt-3"disabled>Agregar a Carrito</Button> :(
+                            <Button variant="contained"color="secondary"className="mt-3"onClick={compra}>Agregar a Carrito</Button>
+                        )
+                    }
                 </div>
             </div>
         </div>
     );
 }
+
 export default ItemCount;

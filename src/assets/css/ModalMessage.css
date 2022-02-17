@@ -1,0 +1,11 @@
+.modal-nombre{
+    color:lightblue;
+    text-shadow:3px 3px 3px black;
+    font-family: 'Lora', serif; /* fuente de titulo mercado shop */
+    font-size:24px;
+    letter-spacing: 1px; 
+}
+.modal-description{
+    letter-spacing: 2px;
+    text-align: center;
+}

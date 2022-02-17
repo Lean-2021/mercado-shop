@@ -1,11 +1,30 @@
-import ItemCount from "./ItemCount";
+import ItemCount from './ItemCount';
 import '../assets/css/ItemDetail.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import{Link} from 'react-router-dom';
-
+import Button from '@mui/material/Button';
+import { useState } from "react";
+import ModalMessage from '../components/ModalMessage.js';
 
 export const ItemDetail =(props)=>{
+    const [itemCount,setItemCount]=useState(0);  // valor inicial del itemcount
+    const [modal,setModal]=useState(false);
+   
+    const ocultar =()=>{
+        setModal(false);
+    }
+    const onAdd=(cant)=>{  //mostrar unidades seleccionadas y ocultar count mostrando boton finalizar compra
+        
+        if (cant===1){
+            setModal(true);    
+        }
+        else {
+            setModal(true);    
+        }
+        setItemCount(cant)
+        console.log(cant)
+    }
     return(
         <article className="container"style={{textAlign:'start'}}>
             <div className="card mb-3 card-item-detail"><Link to='/' className="text-end"><span className="btnClose"><FontAwesomeIcon icon={faTimes}color="grey"className="boton"/></span></Link>
@@ -28,7 +47,17 @@ export const ItemDetail =(props)=>{
                                 </ul>
                             <p className="text-precio">{'$ '+props.precio}</p>
                             <p className="text-stock">Stock : {props.stock+' u.'}</p>
-                            <ItemCount cantidad="1"stock ="5"/>    
+                            {
+                                    itemCount===0 ? 
+                                        <ItemCount cantidad={itemCount}stock ={props.stock}onAdd={onAdd}/>    
+                                    :(<Link to='/cart'className="boton-finalizar-compra"><Button variant="contained"color="error"className="mt-5 mb-5 p-4">Finalizar Compra</Button></Link>)       
+                            }
+                            {
+                                itemCount ===1 ?
+                                <ModalMessage mostrar={modal}text={`La cantidad es de ${itemCount} producto`}onAdd={ocultar}/>:
+                                (<ModalMessage mostrar={modal}text={`La cantidad es de ${itemCount} productos`}onAdd={ocultar}/>)
+                                
+                            }
                         </div>
                     </div>
                 </div>
