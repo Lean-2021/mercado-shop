@@ -17,15 +17,15 @@ const NavBar =()=>{
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <NavLink to='/category/novedades'activeClassName="active"className="nav-link" aria-current="page">Novedades</NavLink>
+                            <NavLink to='/category/novedades'className="nav-link" aria-current="page">Novedades</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to='/category/ofertas'activeClassName="active"className="nav-link">Ofertas</NavLink>
+                            <NavLink to='/category/ofertas'className="nav-link">Ofertas</NavLink>
                         </li>
                         <li className="nav-item dropdown">
-                            <li className="nav-link dropdown-toggle"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span className="nav-link dropdown-toggle"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categorias
-                            </li>
+                            </span>
                             <ul className="dropdown-menu menu-categorias mt-2"aria-labelledby="navbarDropdown">
                                 <li><NavLink to='/category/conectividad'className="dropdown-item">Conectividad</NavLink></li>
                                 <li><NavLink to='/category/desktop'className="dropdown-item">Desktop</NavLink></li>           
@@ -35,9 +35,9 @@ const NavBar =()=>{
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
-                            <li className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Marcas
-                            </li>
+                            </span>
                             <ul className="dropdown-menu menu-marcas mt-2"aria-labelledby="navbarDropdown">
                                 <li><NavLink to='/category/brother'className="dropdown-item">Brother</NavLink></li>
                                 <li><NavLink to='/category/dell'className="dropdown-item">Dell</NavLink></li>           
@@ -55,7 +55,6 @@ const NavBar =()=>{
                     <form className="d-flex">
                         <button className="btn btn-outline-success me-4">Ingresar</button>
                         <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"title="Buscar Productos"/> 
-                        
                         <button className="btn btn-primary"type="button"><SearchIcon /></button>
                         <CartWidget />
                     </form>

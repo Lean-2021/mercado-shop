@@ -14,7 +14,6 @@ const ItemList = ()=>{
     const {categoryId} = useParams();
     const errorDatos =()=>{
         console.log('error de datos');
-        alert('Error de conexiòn de datos')
     } 
     useEffect(()=>{  //obtener datos de la promesa en 2 segundos 
         setLoad(true)
@@ -62,7 +61,7 @@ const ItemList = ()=>{
                     itemList.map(item =>
                         <Item
                             key={item.id}
-                            item={item.id}
+                            id={item.id}
                             imagen={item.imagen}
                             categoria={item.categoria.charAt(0).toUpperCase() + item.categoria.slice(1)}
                             marca={item.marca.charAt(0).toUpperCase() + item.marca.slice(1)}

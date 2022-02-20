@@ -4,13 +4,14 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import{Link} from 'react-router-dom';
 import Button from '@mui/material/Button';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ModalMessage from '../components/ModalMessage.js';
+import { CartContext } from './CartContext';
 
 export const ItemDetail =(props)=>{
     const [itemCount,setItemCount]=useState(0);  // valor inicial del itemcount
     const [modal,setModal]=useState(false);
-   
+    const datos = useContext(CartContext);
     const ocultar =()=>{
         setModal(false);
     }
@@ -22,8 +23,9 @@ export const ItemDetail =(props)=>{
         else {
             setModal(true);    
         }
-        setItemCount(cant)
-        console.log(cant)
+        setItemCount(cant);
+
+        datos.addItem(props,cant)//agregar datos al carrito item y cantidad
     }
     return(
         <article className="container"style={{textAlign:'start'}}>
@@ -48,9 +50,11 @@ export const ItemDetail =(props)=>{
                             <p className="text-precio">{'$ '+props.precio}</p>
                             <p className="text-stock">Stock : {props.stock+' u.'}</p>
                             {
-                                    itemCount===0 ? 
-                                        <ItemCount cantidad={itemCount}stock ={props.stock}onAdd={onAdd}/>    
-                                    :(<Link to='/cart'className="boton-finalizar-compra"><Button variant="contained"color="error"className="mt-5 mb-5 p-4">Finalizar Compra</Button></Link>)       
+                                    itemCount===0 ?
+                                        <section className="boton-count">
+                                            <ItemCount cantidad={itemCount}stock ={props.stock}onAdd={onAdd}/>    
+                                        </section>
+                                            :(<Link to='/cart'className="boton-finalizar-compra"><Button variant="contained"color="error"className="mt-5 mb-5 p-4">Finalizar Compra</Button></Link>)       
                             }
                             {
                                 itemCount ===1 ?

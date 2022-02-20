@@ -26,6 +26,8 @@ const ItemDetailContainer =()=>{
                     {
                         loading ? <CircularProgressWithLabel value={10}/> : (  
                             <ItemDetail
+                                id={itemDetail.id}
+                                // id={itemDetail.id}
                                 categoria={itemDetail.categoria.charAt(0).toUpperCase()+itemDetail.categoria.slice(1)}
                                 imagen={itemDetail.imagen}
                                 marca={itemDetail.marca.charAt(0).toUpperCase()+itemDetail.marca.slice(1)}

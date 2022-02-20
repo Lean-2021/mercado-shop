@@ -2,7 +2,7 @@
     background-color: rgba(100, 100, 100,0.4);
     box-shadow: 0px -1px 5px 1px rgb(41, 39, 39);
     height: 250px;
-    margin-top: 12%;
+    margin-top: 20%;
 }
 /* title footer */
 .footer-title{
@@ -50,10 +50,7 @@
     text-shadow: 2px 2px 3px black;
     transform: scale(1.1);
 }
-/* link activo footer */
-.footer-link-active{
-    font-weight: bolder;
-}
+
 .footer-nav .nav-link{
     color:rgba(24, 23, 23, 0.6);
     font-size: 22px;
@@ -64,7 +61,7 @@
 /* Resoluciones pequeñas */
 @media only screen and (max-width:500px){
     .section-footer{
-        margin-top:10%;
+        margin-top:15%;
         height:350px;
     }
     .footer-title{

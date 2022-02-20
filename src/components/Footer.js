@@ -15,8 +15,8 @@ export const Footer =()=>{
             <div className="row container-fluid">
                 <div className="col-md-12 text-center">
                     <ul className="footer-nav pt-3">
-                        <li className="nav-item"><NavLink to='/category/novedades'activeClassName="footer-link-active"className="nav-link">Novedades</NavLink></li>
-                        <li className="nav-item"><NavLink to='/category/ofertas'activeClassName="footer-link-active" className="nav-link">Ofertas</NavLink></li>
+                        <li className="nav-item"><NavLink to='/category/novedades'className="nav-link">Novedades</NavLink></li>
+                        <li className="nav-item"><NavLink to='/category/ofertas' className="nav-link">Ofertas</NavLink></li>
                         <li className="nav-item"><Link to='' className="nav-link">Login</Link></li>
                     </ul>
                 </div>

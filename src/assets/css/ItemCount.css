@@ -19,3 +19,9 @@
     color:black;
     font-weight: bold;
 }
+
+@media only screen and(max-width:500px){
+    .count{
+        padding-left:30px;
+    }
+}

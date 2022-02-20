@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom';
 // generar card de items
 const Item =(props) =>{
     return(
-        <Link to={`/item/${props.item}`}style={{textDecoration:'none'}}><div className="Card">
+        <Link to={`/item/${props.id}`}style={{textDecoration:'none'}}><div className="Card">
             <Card sx={{ width: 220 }} className="card-items">
                 <CardActionArea>
                     <CardMedia
