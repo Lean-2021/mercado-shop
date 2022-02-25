@@ -8,7 +8,7 @@ import {Link,NavLink} from 'react-router-dom';
 
 const NavBar =()=>{
     return(
-        <nav className="navbar navbar-expand-lg navbar-light">
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container-fluid">
                 <Link to='/'className="navbar-brand nav-title"><img src={logo} width="35"alt="logo web"className="me-3 logoWeb"/>Mercado Shop</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,9 +56,9 @@ const NavBar =()=>{
                         <button className="btn btn-outline-success me-4">Ingresar</button>
                         <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"title="Buscar Productos"/> 
                         <button className="btn btn-primary"type="button"><SearchIcon /></button>
-                        <CartWidget />
+                        <Link to='/cart'><CartWidget/></Link>
                     </form>
-                </div>
+                </div> 
             </div>
         </nav>
     );

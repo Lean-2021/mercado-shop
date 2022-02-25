@@ -6,9 +6,7 @@ import productos from "../utils/productos.js";
 import { CustomProductos } from "./CustomProductos";
 import { useParams} from "react-router-dom";
 
-
 const ItemList = ()=>{
-    
     const [itemList,setItemList] = useState([]);  //estado inicial de productos vacio
     const [load,setLoad] = useState(true); //estado del componente efecto circular de carga de datos al 100%
     const {categoryId} = useParams();

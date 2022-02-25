@@ -2,8 +2,38 @@
     margin-top:60px;
     background-color: white;
     box-shadow: 2px 2px 3px 2px grey;
-    height:140px;
+    height:120px;
+    width:65%;
 }
+.cart-row-detail{     /*Detalle de la compra*/
+    top:180px;
+    box-shadow: 2px 2px 4px 2px rgb(90, 88, 88);
+    position:absolute;
+    padding:35px;
+    left:10px;
+    width:25%;
+    background-color: lightgrey;
+}
+
+.compra-total-detail{   /*texto del total de la compra*/
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.compra-detail-title{       /*titulo de detalle de compra*/
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+.compra-detail-pago{   /* estilo detalle pago total de la compra*/
+    font-weight: bolder;
+    font-size: 22px;
+    margin-top:-3px;
+}
+.cart-container{
+    width:83%;
+}
+
 .cart-imagen{
     object-fit: contain;
 }
@@ -17,22 +47,29 @@
     font-weight: bolder;
 }
 .cart-borrar-item{
-    margin-top:55px;
-    font-size: 30px;
+    margin-top:50px;
+    margin-left: 40px;
+    font-size: 25px;
 }
 .cart-borrar-item:hover{
     color:red;
     transform: scale(1.1);
+}
+.boton-seguir-limpiar{
+    margin-top: 60px;
+}
+.botones{
+    margin-top: 60px;
 }
 
 @media only screen and (max-width:576px){
     .cart-row{
         position:relative;
         height:350px;
-        margin:auto;
+        margin-left:-27px;
         margin-top:50px;
         margin-bottom: 30px;
-        width:99%;
+        width:119%;
     }
     .cart-borrar-item{
         position:absolute;
@@ -41,7 +78,7 @@
     }
     .boton-seguir-limpiar{
         margin-left:-80px;
-        margin-top:-20px;
+        margin-top:50px;
     }
     .boton-seguir{
         width:210px;
@@ -52,7 +89,19 @@
         margin-left:-30px;
     }
     .boton-seguir-solo{
+        margin-top:30px;
         margin-left:160px;
         width:210px;
+    }
+    .cart-row-detail{
+        position:relative;
+        display: flex;
+        margin-bottom: 250px;
+        margin-top: -130px;
+        width:330px;
+        margin-left: 4px;
+    }
+    .detalle-cantidades{
+        margin-top:1px;
     }
 }

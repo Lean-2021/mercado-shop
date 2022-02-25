@@ -5,7 +5,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import{Link} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { useContext, useState } from "react";
-import ModalMessage from '../components/ModalMessage.js';
+import ModalMessage from '../components/ModalMessage';
 import { CartContext } from './CartContext';
 
 export const ItemDetail =(props)=>{
@@ -15,8 +15,7 @@ export const ItemDetail =(props)=>{
     const ocultar =()=>{
         setModal(false);
     }
-    const onAdd=(cant)=>{  //mostrar unidades seleccionadas y ocultar count mostrando boton finalizar compra
-        
+    const onAdd=(cant)=>{  //mostrar unidades seleccionadas y ocultar count mostrando boton finalizar compra  
         if (cant===1){
             setModal(true);    
         }
@@ -26,6 +25,7 @@ export const ItemDetail =(props)=>{
         setItemCount(cant);
 
         datos.addItem(props,cant)//agregar datos al carrito item y cantidad
+        datos.agregarCantidad(cant);
     }
     return(
         <article className="container"style={{textAlign:'start'}}>
@@ -54,13 +54,12 @@ export const ItemDetail =(props)=>{
                                         <section className="boton-count">
                                             <ItemCount cantidad={itemCount}stock ={props.stock}onAdd={onAdd}/>    
                                         </section>
-                                            :(<Link to='/cart'className="boton-finalizar-compra"><Button variant="contained"color="error"className="mt-5 mb-5 p-4">Finalizar Compra</Button></Link>)       
+                                            :(<Link to='/cart'className="boton-finalizar-compra"><Button variant="contained"color="error"className="mt-5 mb-5 p-4">Ver Compras</Button></Link>)       
                             }
                             {
-                                itemCount ===1 ?
-                                <ModalMessage mostrar={modal}text={`La cantidad es de ${itemCount} producto`}onAdd={ocultar}/>:
-                                (<ModalMessage mostrar={modal}text={`La cantidad es de ${itemCount} productos`}onAdd={ocultar}/>)
-                                
+                                itemCount ===1 ? 
+                                <ModalMessage mostrar={modal}text={`Se agrego ${itemCount} unidad al carrito`}onAdd={ocultar}/>:
+                                (<ModalMessage mostrar={modal}text={`Se agregaron ${itemCount} unidades al carrito`}onAdd={ocultar}/>)   
                             }
                         </div>
                     </div>

@@ -54,7 +54,7 @@
     margin-top:-48px;
     margin-left:82px;
 }
-@media only screen and (max-width:500px){
+@media only screen and (max-width:576px){
     .dropdown-menu{
         width:370px;
         margin-bottom: 30px;

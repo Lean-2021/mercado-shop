@@ -2,12 +2,14 @@ import {Modal,Box,Button} from '@mui/material';
 import logo from '../assets/image/menu.png';  // importar logo de la web desde assets imagenes
 import '../assets/css/ModalMessage.css';
 
-
 const ModalMessage=(props)=>{
+    setTimeout(()=>{
+        props.onAdd()
+    },4000);
+
     const ocultar=()=>{
         props.onAdd()
     }
-
     const style = {
         position: 'absolute',
         top: '50%',
