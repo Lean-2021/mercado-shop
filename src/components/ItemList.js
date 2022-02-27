@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import Item from "./Item";
 import '../assets/css/ItemList.css';
 import CircularProgressWithLabel from '../components/CircularProgressWithLabel';
-import productos from "../utils/productos.js";
-import { CustomProductos } from "./CustomProductos";
 import { useParams} from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import db from "../utils/firebaseConfig";
 
 const ItemList = ()=>{
     const [itemList,setItemList] = useState([]);  //estado inicial de productos vacio
@@ -13,44 +13,73 @@ const ItemList = ()=>{
     const errorDatos =()=>{
         console.log('error de datos');
     } 
-    useEffect(()=>{  //obtener datos de la promesa en 2 segundos 
-        setLoad(true)
+    useEffect(()=>{  //obtener datos de FireBase          
+        setLoad(true);
         switch (categoryId){
             case undefined:    // cuando no se elige un parametro mostrar todos los productos
-                CustomProductos(2000,productos)
-                .then((data) => setItemList(data))
-                .then(()=>setLoad(false))
-                .catch(()=>errorDatos())
+                const fireBaseProducts = async()=>{
+                    const querySnapshot = await getDocs(collection(db, "products"));
+                    const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()}));
+                    return datos  
+                }
+                fireBaseProducts()
+                    .then( data => setItemList(data))
+                    .then(()=>setLoad(false))
+                    .catch(()=>errorDatos())   
             break;
-            case 'novedades':   // cuando se selecciona novedades filtrar productos por el año 2022
-                CustomProductos(2000,productos.filter(item=> item.anio === 2022))
-                .then((data) => setItemList(data))
-                .then(()=>setLoad(false))
-                .catch(()=>errorDatos())
+            case 'novedades':   // cuando se selecciona novedades filtrar productos por el año 2022  
+                const fireBaseNovedades = async()=>{
+                    let dato = query(collection(db,'products'), where('anio','==',2022))
+                    const querySnapshot = await getDocs(dato);
+                    const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()}));
+                    return datos
+                }
+                fireBaseNovedades()
+                    .then( data => setItemList(data))
+                    .then(()=>setLoad(false))
+                    .catch(()=>errorDatos())  
             break;
-            case 'ofertas':  // cuando se selecciona ofertas filtrar productos que tengan un precio menos a $30.000
-                CustomProductos(2000,productos.filter(item=> item.precio < 30000))
-                .then((data) => setItemList(data))
-                .then(()=>setLoad(false))
-                .catch(()=>errorDatos())
+            case 'ofertas':  // cuando se selecciona ofertas filtrar productos que tengan un precio menor a $30.000
+                const fireBaseOfertas = async()=>{
+                    let dato = query(collection(db,'products'), where('precio','<',30000))
+                    const querySnapshot = await getDocs(dato);
+                    const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()}));
+                    return datos
+                }
+                fireBaseOfertas()
+                    .then( data => setItemList(data))
+                    .then(()=>setLoad(false))
+                    .catch(()=>errorDatos())
             break;
             default:
-                for (let producto of productos){
-                    if (categoryId === producto.categoria){  // si el valor de categoryId es igual al de la categoria filtrar productos por la categoria
-                        CustomProductos(2000,productos.filter(item=>item.categoria === categoryId))
-                            .then((data)=>setItemList(data))
-                            .then(()=>setLoad(false))
-                            .catch(()=>errorDatos())
-                    }
-                    else if (categoryId === producto.marca){  //si el valos de categoryId es igual al de la marca filtrar productos por marca y mostrarlo en category/marca
-                        CustomProductos(2000,productos.filter(item=>item.marca === categoryId))
-                            .then((data)=>setItemList(data))
-                            .then(()=>setLoad(false))
-                            .catch(()=>errorDatos())
+                const fireBaseCategorias = async()=>{
+                    const data = await getDocs(collection(db, "products"));  //traer todos los datos de productos
+                    const productos = data.docs.map(document=>({id:document.id,...document.data()}));
+    
+                    for (let producto of productos){
+                        console.log(producto.categoria)
+                        if (categoryId===producto.categoria){   //si la categoria coincide con la categoria mostrar productos por categoria 
+                            let categoria = query(collection(db,'products'), where('categoria','==',categoryId))
+                            const querySnapshot = await getDocs(categoria)
+                            const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()}));
+                            console.log(datos)
+                            return datos
+                        }
+                        else if (categoryId===producto.marca){  //mostrar productos en categoria pero por marcas
+                            let marca = query(collection(db,'products'), where('marca','==',categoryId))
+                            const querySnapshot = await getDocs(marca)
+                            const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()}));
+                            console.log(datos)
+                            return datos
+                        }
                     }
                 }
+                fireBaseCategorias()
+                    .then( data => setItemList(data))
+                    .then(()=>setLoad(false))
+                    .catch(()=>errorDatos())
             break;                      
-        }
+        }  
     },[categoryId]);
     return(
         <div className="ItemListContainer container-fluid text-center">
@@ -61,8 +90,8 @@ const ItemList = ()=>{
                             key={item.id}
                             id={item.id}
                             imagen={item.imagen}
-                            categoria={item.categoria.charAt(0).toUpperCase() + item.categoria.slice(1)}
-                            marca={item.marca.charAt(0).toUpperCase() + item.marca.slice(1)}
+                            categoria={item.categoria}
+                            marca={item.marca}
                             modelo={item.modelo}
                             precio={'$ '+item.precio}
                             stock={item.stock}

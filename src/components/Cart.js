@@ -127,7 +127,7 @@ export const Cart =()=>{
                 :(
                     datos.cartList.map(item=>   
                 
-                        <section className="container-fluid cart-container text-center">
+                        <section key={item.id}className="container-fluid cart-container text-center">
                             <div className="row cart-row">
                                 <div className="col-md-3">
                                     <img src={item.imagen}alt="imagen producto" width="180"height="110"className="cart-imagen mt-1"/>
@@ -155,7 +155,7 @@ export const Cart =()=>{
                     )
                 )
             }
-            {modalFinalizar ===true ? <ModalMessage mostrar={modalFinalizar}text={'GRACIAS POR SU COMPRA'} onAdd={ocultarCompra}/> : (<ModalMessage mostrar={modalFinalizar}text={'GRACIAS POR SU COMPRA'}onAdd={ocultarCompra}/>)}    
+            {modalFinalizar && <ModalMessage mostrar={modalFinalizar}text={'GRACIAS POR SU COMPRA'} onAdd={ocultarCompra}/>}     
         </section>
     )
 }

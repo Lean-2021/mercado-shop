@@ -1,15 +1,12 @@
-import {Modal,Box,Button} from '@mui/material';
+import {Modal,Box} from '@mui/material';
 import logo from '../assets/image/menu.png';  // importar logo de la web desde assets imagenes
 import '../assets/css/ModalMessage.css';
 
 const ModalMessage=(props)=>{
     setTimeout(()=>{
         props.onAdd()
-    },4000);
+    },3000);
 
-    const ocultar=()=>{
-        props.onAdd()
-    }
     const style = {
         position: 'absolute',
         top: '50%',
@@ -31,8 +28,7 @@ const ModalMessage=(props)=>{
             >
                 <Box sx={style}>
                      <p className="modal-nombre text-center"><span className="text-center me-3"><img src={logo}alt="logo"width="25"/></span>Mercado - Shop</p>
-                        <p className='modal-description'>{props.text}</p>
-                    <Button variant="text" color="warning"className="mt-3 ms-4"onClick={ocultar}>Cerrar</Button>
+                    <p className='modal-description pt-3'>{props.text}</p>
                 </Box>
             </Modal>
         </div>

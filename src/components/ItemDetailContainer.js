@@ -1,22 +1,36 @@
 import { useEffect, useState } from 'react';
 import {ItemDetail} from './ItemDetail';
 import CircularProgressWithLabel from '../components/CircularProgressWithLabel';
-import {CustomProductos} from "./CustomProductos";
-import productos from '../utils/productos.js';
 import {useParams} from 'react-router-dom';
 import '../assets/css/ItemDetailContainer.css';
-
+import { doc, getDoc } from "firebase/firestore";
+import db from "../utils/firebaseConfig";
 
 const ItemDetailContainer =()=>{
     const [loading,setLoading]=useState(true);
     const [itemDetail,setItemDetail]=useState([]);
     const {id} = useParams();
     useEffect(()=>{
-        setLoading(true);  
-                CustomProductos(2000,productos.find(element=>element.id ===parseInt(id)))
-                .then((data)=>setItemDetail(data))
-                .then (()=>setLoading(false))
-                .catch(error=>console.log(error))   
+         setLoading(true);
+         
+        const firebaseItem = async() =>{
+            const docRef = doc(db, "products",id);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()){
+                return {
+                    id:id,
+                    ...docSnap.data()
+                }
+            }
+            else {
+                console.log("Producto no encontrado");
+            }
+        } 
+        firebaseItem()    
+            .then((data)=>setItemDetail(data))
+            .then (()=>setLoading(false))
+            .catch(error=>console.log(error))   
     },[id]);
 
     return(
@@ -27,7 +41,6 @@ const ItemDetailContainer =()=>{
                         loading ? <CircularProgressWithLabel value={10}/> : (  
                             <ItemDetail
                                 id={itemDetail.id}
-                                // id={itemDetail.id}
                                 categoria={itemDetail.categoria.charAt(0).toUpperCase()+itemDetail.categoria.slice(1)}
                                 imagen={itemDetail.imagen}
                                 marca={itemDetail.marca.charAt(0).toUpperCase()+itemDetail.marca.slice(1)}

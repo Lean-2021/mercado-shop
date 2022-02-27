@@ -21,10 +21,10 @@ const Item =(props) =>{
                     />
                     <CardContent>
                         <Typography gutterBottom variant="p" component="div"className="card-categoria pb-1">
-                            {props.categoria}
+                            {props.categoria.charAt(0).toUpperCase()+props.categoria.slice(1)}
                         </Typography>
                         <Typography gutterBottom variant="h5" component="div"className="card-title">
-                            {props.marca}
+                            {props.marca.charAt(0).toUpperCase()+props.marca.slice(1)}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             {props.modelo}
