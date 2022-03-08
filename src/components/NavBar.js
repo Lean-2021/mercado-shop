@@ -25,7 +25,7 @@ const NavBar =()=>{
             setButtonLink(buttonLink)  
         },[buttonLink])
 
-        const logOut=()=>{
+        const logOut=()=>{    
             dato.setActiveLogin(false);
             datosCart.clearCart();
        }

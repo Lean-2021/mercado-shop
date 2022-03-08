@@ -7,7 +7,6 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {UserContext} from './UserContext';
 import {useContext} from 'react';
 
-
 const Login =()=>{
     const [usuario,setUsuario]=useState('');
     const [contraseña,setContraseña]=useState('');
@@ -102,7 +101,6 @@ const Login =()=>{
         else if (usuario=== users.name && contraseña === users.password){  //usuario correcto
             let idUser = users.id
             let userActivo = data.listRegister.find(element=>element.id ===idUser)
-            console.log(userActivo);
             data.setUserActive(userActivo)
             data.setActiveLogin(true);
             setUsuario('');
