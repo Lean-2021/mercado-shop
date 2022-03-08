@@ -5,3 +5,10 @@
     color: black;
     margin-top: -2px;
 }
+.cartLogout{
+    font-size:35px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    margin-top: 2px;
+}

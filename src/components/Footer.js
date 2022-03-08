@@ -17,7 +17,7 @@ export const Footer =()=>{
                     <ul className="footer-nav pt-3">
                         <li className="nav-item"><NavLink to='/category/novedades'className="nav-link">Novedades</NavLink></li>
                         <li className="nav-item"><NavLink to='/category/ofertas' className="nav-link">Ofertas</NavLink></li>
-                        <li className="nav-item"><Link to='' className="nav-link">Login</Link></li>
+                        <li className="nav-item"><Link to='/login' className="nav-link">Login</Link></li>
                     </ul>
                 </div>
             </div>

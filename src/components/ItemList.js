@@ -6,7 +6,9 @@ import { useParams} from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import db from "../utils/firebaseConfig";
 
+
 const ItemList = ()=>{
+
     const [itemList,setItemList] = useState([]);  //estado inicial de productos vacio
     const [load,setLoad] = useState(true); //estado del componente efecto circular de carga de datos al 100%
     const {categoryId} = useParams();
@@ -15,8 +17,9 @@ const ItemList = ()=>{
     } 
     useEffect(()=>{  //obtener datos de FireBase          
         setLoad(true);
+        
         switch (categoryId){
-            case undefined:    // cuando no se elige un parametro mostrar todos los productos
+            case undefined:    // cuando no se elige un parametro mostrar todos los productos      
                 const fireBaseProducts = async()=>{
                     const querySnapshot = await getDocs(collection(db, "products"));
                     const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()}));
@@ -25,7 +28,7 @@ const ItemList = ()=>{
                 fireBaseProducts()
                     .then( data => setItemList(data))
                     .then(()=>setLoad(false))
-                    .catch(()=>errorDatos())   
+                    .catch(()=>errorDatos())                  
             break;
             case 'novedades':   // cuando se selecciona novedades filtrar productos por el año 2022  
                 const fireBaseNovedades = async()=>{
@@ -57,19 +60,16 @@ const ItemList = ()=>{
                     const productos = data.docs.map(document=>({id:document.id,...document.data()}));
     
                     for (let producto of productos){
-                        console.log(producto.categoria)
                         if (categoryId===producto.categoria){   //si la categoria coincide con la categoria mostrar productos por categoria 
                             let categoria = query(collection(db,'products'), where('categoria','==',categoryId))
                             const querySnapshot = await getDocs(categoria)
-                            const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()}));
-                            console.log(datos)
+                            const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()}));  
                             return datos
                         }
                         else if (categoryId===producto.marca){  //mostrar productos en categoria pero por marcas
                             let marca = query(collection(db,'products'), where('marca','==',categoryId))
                             const querySnapshot = await getDocs(marca)
-                            const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()}));
-                            console.log(datos)
+                            const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()})); 
                             return datos
                         }
                     }
@@ -79,7 +79,7 @@ const ItemList = ()=>{
                     .then(()=>setLoad(false))
                     .catch(()=>errorDatos())
             break;                      
-        }  
+            }
     },[categoryId]);
     return(
         <div className="ItemListContainer container-fluid text-center">

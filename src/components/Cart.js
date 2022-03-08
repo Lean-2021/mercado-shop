@@ -7,10 +7,15 @@ import { Button } from "@mui/material";
 import {Link} from 'react-router-dom';
 import ModalMessage from './ModalMessage';
 import { ModalConfirmacion } from "./ModalConfirmacion";
+import { UserContext } from "./UserContext";
+import { collection, serverTimestamp, setDoc,doc, updateDoc, increment } from "firebase/firestore";
+import db from '../utils/firebaseConfig';
+import BackLoad from './BackLoad';
 
 export const Cart =()=>{
-
+    const [loadBack,setLoadBack]=useState(false); //mostrar - ocultar backdrop
     const datos = useContext(CartContext);
+    const user = useContext(UserContext);
     const [envio,setEnvio]=useState(0);  // estado costo de envio
     const [pagoOnline,setPagoOnline]=useState(0); //estado descuento pago online
     const [pagoTotal,setPagoTotal]= useState(0);  // estado del pago total
@@ -18,14 +23,50 @@ export const Cart =()=>{
     const [deleteItem, setDeleteItem]=useState(false);  // estado mostrar modal borrar item
     const [deleteCarrito,setDeleteCarrito]=useState(false);  // estado mostrar modal limpiar carrito
     const [producto,setProducto]=useState(0);  //estado del valor del id del item a eliminar
+    const [resultado,setResultado]=useState();  //pasar id de orden de compra al modal
 
     const finalizarCompra =() =>{
-        setModalFinalizar(true);
-        datos.clearCart();
+        setLoadBack(true); //mostrar backdrop
+        let order={   //crear orden de compra
+            buyer:{   //datos del usuario que compro
+                name: user.userActive.name,
+                email: user.userActive.email,
+                phone: user.userActive.phone
+            },
+            items:datos.cartList.map(element=>({  //detalles del producto que compro
+                id:element.id,
+                title:element.modelo,
+                price:element.precio,
+                qty:element.cantidad
+            })),
+            date:serverTimestamp(),
+            total:pagoTotal
+        }
+        console.log(order);
+        datos.setDateOrder(order);
+
+        const createOrderFirebase= async()=>{  // crear orden de compra en firebase
+            const newOrderRef = doc(collection(db,"orders"));
+            await setDoc(newOrderRef, order);
+            return newOrderRef
+        }
+        createOrderFirebase()
+            .then((result)=> setResultado(result.id))
+            .then(()=>{setModalFinalizar(true);
+                datos.cartList.map(async(item) =>{
+                    const itemFire = doc(db,'products',item.id);
+                    await updateDoc(itemFire,{
+                        stock: increment(-item.cantidad)
+                    })
+                })    
+                datos.clearCart();
+            })
+            .then(()=>setLoadBack(false)) //ocultar backdrop
+            .catch(error => console.log(error))
     }
-    const ocultarCompra =()=>{
-        setModalFinalizar(false);
-    }
+        const ocultarCompra =()=>{  //ocultar modal de finalizar compra 
+            setModalFinalizar(false);
+        }
 
     useEffect(()=>{    //actualizar costo de envío del producto según el valor de la compra
         switch (true){
@@ -155,7 +196,8 @@ export const Cart =()=>{
                     )
                 )
             }
-            {modalFinalizar && <ModalMessage mostrar={modalFinalizar}text={'GRACIAS POR SU COMPRA'} onAdd={ocultarCompra}/>}     
+            <BackLoad open={loadBack}/>
+            {modalFinalizar && <ModalMessage mostrar={modalFinalizar} text={resultado} close={ocultarCompra}/>}     
         </section>
     )
 }

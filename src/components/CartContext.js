@@ -7,6 +7,7 @@ const CartContextProvider =({children})=>{
     const [cartList,setCartlist] = useState([]);
     const [sumarCant,setSumarCant] = useState(0);   //cantidad total de items comprados
     const [subtotal,setSubtotal] = useState(0);
+    const [dateOrder,setDateOrder]=useState();
 
     const addItem =(item,cant)=>{  // agregar productos al carrito
         
@@ -77,7 +78,7 @@ const CartContextProvider =({children})=>{
 
 
     return(
-        <CartContext.Provider value={{cartList, addItem, removeItem,clearCart,agregarCantidad,sumarCant,subtotal}}>
+        <CartContext.Provider value={{cartList, addItem, removeItem,clearCart,agregarCantidad,sumarCant,subtotal,dateOrder,setDateOrder,setCartlist}}>
             {children}
         </CartContext.Provider>
     )

@@ -1,0 +1,52 @@
+.loginContainer{
+    height:100vh;
+}
+.formContainer{
+    position:relative;
+    margin-top: 20vh;
+    background-color: white;
+    box-shadow: 3px 3px 10px 4px grey;
+}
+.formData{
+    margin-top:-20px;
+    padding:20px;
+}
+.formData label{
+    font-weight: bolder;
+    font-size: 18px;
+    margin-top:30px;
+    margin-bottom: 20px;
+}
+.closeLogin{
+    color:black;
+    font-size: 20px;
+}
+.boton{
+    position: absolute;
+    top:15px;
+    right: 15px;
+}
+
+.closeLogin:hover{
+    color:red;
+}
+
+.buttonRegister{
+    width:100%;
+    margin-top:10px;
+    margin-bottom:15px;
+}
+.buttonRegister:hover{
+    background-color:green;
+}
+.errorUsuario{
+    color:red;
+    font-weight: bold;
+    margin-bottom: -15px;
+    margin-top:5px;
+}
+.errorTerminos{
+    margin-top:-18px;
+    color:red;
+    font-weight: bold;
+}

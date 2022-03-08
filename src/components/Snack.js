@@ -10,9 +10,9 @@ export const Snack =(props)=>{ //mensaje Snackbar de agregar unidades al carrito
     });
 
   return (
-    <Stack spacing={2} sx={{ width: '100%' }}>
+    <Stack spacing={2}>
       <Snackbar open={props.mostrar} autoHideDuration={props.time} onClose={props.ocultar}>
-        <Alert onClose={props.ocultar} severity="success" sx={{ width: '100%' }}>
+        <Alert onClose={props.ocultar} severity={props.color} sx={{ width: '100%' }}>
           <p>{props.text}</p>
         </Alert>
       </Snackbar>

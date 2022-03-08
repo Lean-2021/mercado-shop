@@ -2,18 +2,26 @@ import ItemCount from './ItemCount';
 import '../assets/css/ItemDetail.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import{Link} from 'react-router-dom';
+import{Link, useNavigate} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { useContext, useState } from "react";
 import {Snack} from './Snack';
 import { CartContext } from './CartContext';
+import { UserContext } from './UserContext';
 
 
 export const ItemDetail =(props)=>{
     const [itemCount,setItemCount]=useState(0);  // valor inicial del itemcount
     const [snack,setSnack]=useState(false);
     const datos = useContext(CartContext);
-    const ocultar =()=>{
+    const user = useContext(UserContext);
+    const navegar = useNavigate();
+    
+    const login=()=>{  // ir hacia la ruta login
+        navegar('/login')
+    }
+    
+    const ocultar =()=>{  // ocultar SnackBar
         setSnack(false);
     }
     const onAdd=(cant)=>{  //mostrar unidades seleccionadas y ocultar count mostrando boton finalizar compra  
@@ -51,20 +59,23 @@ export const ItemDetail =(props)=>{
                             <p className="text-precio">{'$ '+props.precio}</p>
                             <p className="text-stock">Stock : {props.stock+' u.'}</p>
                             {
+                                    user.activeLogin ?
                                     itemCount===0 ?
                                         <section className="boton-count">
                                             <ItemCount cantidad={itemCount}stock ={props.stock}onAdd={onAdd}/>    
                                         </section>
                                             :(<Link to='/cart'className="boton-finalizar-compra"><Button variant="contained"color="error"className="mt-5 mb-5 p-4">Ver Compras</Button></Link>)       
+                            
+                                    :(
+                                        <Button variant='contained'color='error' style={{width:'200px',height:'50px',marginTop:'30px'}} onClick={login}>Login</Button>
+                                    )
                             }
                             {
                                 snack &&
                                 itemCount ===1? 
-                                <Snack mostrar={snack}time={3000}ocultar={ocultar}text={`Se agrego ${itemCount} unidad al carrito`}/>
-                                :(<Snack mostrar={snack}time={3000}ocultar={ocultar}text={`Se agregaron ${itemCount} unidades al carrito`}/>)
-
-                                // <ModalMessage mostrar={modal}text={`Se agrego ${itemCount} unidad al carrito`}onAdd={ocultar}/>:
-                                // (<ModalMessage mostrar={modal}text={`Se agregaron ${itemCount} unidades al carrito`}onAdd={ocultar}/>)   
+                                <Snack mostrar={snack}time={3000}ocultar={ocultar}text={`Se agrego ${itemCount} unidad al carrito`}color={"success"}/>
+                                :(<Snack mostrar={snack}time={3000}ocultar={ocultar}text={`Se agregaron ${itemCount} unidades al carrito`}color={"success"}/>)
+   
                             }
                         </div>
                     </div>
