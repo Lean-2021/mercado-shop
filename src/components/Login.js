@@ -56,7 +56,7 @@ const Login =()=>{
                 },5000)
             }      
         }    
-        let users = data.listRegister.find(element=>element.name===usuario) //buscar si existe el usuario
+        let users = data.listRegister.find(element=>element.name===usuario.toLowerCase()) //buscar si existe el usuario
         if (usuario===''){  //error si no se ingresa usuario
             setMensajeUsuario('Ingrese el Usuario');
             usuarioLogin.classList.add('is-invalid');
@@ -78,7 +78,7 @@ const Login =()=>{
                 document.getElementById('formInput').reset()                
             },3000)
         }
-        else if (usuario === users.name && contraseña ===''){  //error no se ingreso contraseña
+        else if (usuario.toLowerCase() === users.name && contraseña ===''){  //error no se ingreso contraseña
             setMensajePassword('Ingrese la contraseña');
             passwordLogin.classList.add('is-invalid');
             setPasswordError(true);
@@ -87,7 +87,7 @@ const Login =()=>{
                 setPasswordError(false);
             },5000)
         }
-        else if (usuario === users.name && contraseña !==users.password){ //error constraseña incorrecta
+        else if (usuario.toLowerCase() === users.name && contraseña !==users.password){ //error constraseña incorrecta
             setMensajePassword('Contraseña incorrecta');
             passwordLogin.classList.add('is-invalid');
             setPasswordError(true);
@@ -98,7 +98,7 @@ const Login =()=>{
                 passwordLogin.value=''
             },5000)
         }
-        else if (usuario=== users.name && contraseña === users.password){  //usuario correcto
+        else if (usuario.toLowerCase() === users.name && contraseña === users.password){  //usuario correcto
             let idUser = users.id
             let userActivo = data.listRegister.find(element=>element.id ===idUser)
             data.setUserActive(userActivo)
