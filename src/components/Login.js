@@ -58,10 +58,7 @@ const Login =()=>{
             }      
         }    
         let users = data.listRegister.find(element=>element.name===usuario.toLowerCase()) //buscar si existe el usuario
-<<<<<<< HEAD
-=======
         
->>>>>>> usuarios
         if (usuario===''){  //error si no se ingresa usuario
             setMensajeUsuario('Ingrese el Usuario');
             usuarioLogin.classList.add('is-invalid');
@@ -103,11 +100,7 @@ const Login =()=>{
                 passwordLogin.value=''
             },5000)
         }
-<<<<<<< HEAD
-        else if (usuario.toLowerCase() === users.name && contraseña === users.password){  //usuario correcto
-=======
         else if (usuario.toLowerCase()=== users.name && contraseña === users.password){  //usuario correcto
->>>>>>> usuarios
             let idUser = users.id
             let userActivo = data.listRegister.find(element=>element.id ===idUser)
             data.setUserActive(userActivo)

@@ -28,11 +28,6 @@ const NavBar =()=>{
             setShow(false);
         };
 
-<<<<<<< HEAD
-        const logOut=()=>{    
-            dato.setActiveLogin(false);
-            datosCart.clearCart();
-=======
         const logOut=()=>{
          //guarda los datos de la compra que no finalizo el usuario **************   
         let carrito = datosCart.cartList;
@@ -52,7 +47,6 @@ const NavBar =()=>{
         datosCart.clearCart();  
         setShow(false);    
 
->>>>>>> usuarios
        }
         const cambio=()=>{   // cambio boton search nav
             setButtonLink(true)
