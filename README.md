@@ -115,6 +115,6 @@ se utilizaron otras herramientes que debemos tener instaladas para su correcto f
 
  ## 🔗 Links
 
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/leandro-wagner-040490215)
 
 
