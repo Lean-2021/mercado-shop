@@ -13,7 +13,7 @@ La tienda cuenta con un catálogo de 20 productos. Podemos buscar por categorias
 
 El proyecto fue credo con React JS , una vez creada nuestra aplicación con el siguiente comando en nuestra terminal:
 
-`npx-create-react-app my-app`
+`npx create-react-app my-app`
 
 se utilizaron otras herramientes que debemos tener instaladas para su correcto funcionamiento
 
