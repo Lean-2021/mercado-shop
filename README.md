@@ -96,19 +96,19 @@ se utilizaron otras herramientes que debemos tener instaladas para su correcto f
 
 
 ##### Home
-![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop1.png?alt=media&token=6d2acf71-0118-41c1-b2c5-a52539a71148)
+
+![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop1.png?alt=media&token=fc3baf20-6c7c-4473-9137-e5d65ccf9979)
 
 
 #####  Detail Producto
 
-
-![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop2.png?alt=media&token=f3f9bb2a-29ec-4833-a443-265d816f7cd6)
+![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop2.png?alt=media&token=b697260e-02a1-44f2-9734-f3d66224c04d)
 
 #####  Products Cart
 
-![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop3.png?alt=media&token=5c52d767-63ff-49d8-8e41-b615e2e6baa0)
+![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop3.png?alt=media&token=db5207f6-dac2-45fa-a08d-cc1da179f62f)
 
 ------------
 
 #### Autor    
- &copy;Leandro Wagner  :congratulations:   :smile:  :smile:
+ &copy;Leandro Wagner  :beginner:
