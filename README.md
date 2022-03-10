@@ -110,4 +110,4 @@ se utilizaron otras herramientes que debemos tener instaladas para su correcto f
 ------------
 
 #### Autor    
- &copy;Leandro Wagner  :congratulations:
+ &copy;Leandro Wagner  :congratulations:   :smile:  :smile:
