@@ -7,10 +7,7 @@ import {Link,useNavigate} from 'react-router-dom';
 import { UserContext } from './UserContext';
 import {Snack} from './Snack';
 
-
-
-
-let userId =1;
+let userId =1;  // inicializar el ID para el registro de los usuarios
 
 export const RegisterUser=()=>{
     const [user,setUser]=useState(''); // usuario
@@ -32,7 +29,6 @@ export const RegisterUser=()=>{
     const [errorTerminos,setErrorTerminos]=useState(false); //mostrar mensaje error check terminos
     const [mensajeTerminos,setMensajeTerminos]=useState('');  //mensaje terminos
     
-
     const comprobarNumero=(evt)=>{  //comprobar ingreso de numero de telefono(acepta solo numeros)
         if (evt.keyCode <=47 && evt.keyCode !==8) evt.preventDefault()
         else if(evt.keyCode >=58) evt.preventDefault()  
@@ -194,7 +190,7 @@ export const RegisterUser=()=>{
     }
 
     const register =()=>{   //registrar usuarios
-
+        
         if(datosUser.listRegister.length===0){
             let usuario={
                 id:userId,
@@ -205,9 +201,9 @@ export const RegisterUser=()=>{
                 terminos:terminos 
             }
             datosUser.setListRegister([usuario])
+            localStorage.setItem('users',JSON.stringify([usuario])) //guardarlos localmente en un localStorage
             setSnack(true);
-        }
-        
+        }       
         else if(datosUser.listRegister.length >0){
             datosUser.setListRegister([...datosUser.listRegister,
                 {
@@ -218,11 +214,10 @@ export const RegisterUser=()=>{
                     password:password,
                     terminos:terminos
                 }
-            ])
+            ]);
             setSnack(true);
         }
     }
-    
    const aceptar =()=>{   //aceptar terminos y condiciones
        if (terminos){
            setTerminos(false)
@@ -230,8 +225,7 @@ export const RegisterUser=()=>{
        else {
             setTerminos(true)
        }
-   }
-   
+   } 
     return(
         <section className={style.loginContainer}>    
         <div className='container text-center'>
@@ -257,7 +251,7 @@ export const RegisterUser=()=>{
                           <label className='form-label'>Email</label>
                         <input
                             className='form-control text-center'
-                            type='email'placeholder='Ingrese el email'
+                            type='email'placeholder='example@correo.com'
                             autoComplete='off'
                             id='txtEmail'
                             onKeyDown={blockSpace}
@@ -285,7 +279,7 @@ export const RegisterUser=()=>{
                             onChange={(e)=>setTelefono(e.target.value)}
                         />
                         { errorPhone && <p className={style.errorUsuario}>{mensajePhone}</p>}
-                        <p className='pt-5 pb-3'>
+                        <p className={`pt-5 pb-3 ${style.labelTerminos}`}>
                             <input 
                                 className='form-check-input'
                                 type='checkbox'

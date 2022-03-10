@@ -6,27 +6,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {UserContext} from './UserContext';
 import {useContext} from 'react';
+import {CartContext} from './CartContext';
 
 
 const Login =()=>{
     const [usuario,setUsuario]=useState('');
     const [contraseña,setContraseña]=useState('');
-    const data =useContext(UserContext);
+    const compras = useContext(CartContext);
+    const data = useContext(UserContext);
     const navegar = useNavigate();
     const [usuarioError,setUsuarioError]=useState(false); //mostrar mensaje error usuario 
     const [mensajeUsuario,setMensajeUsuario]=useState(''); //mensaje usuario
     const [passwordError,setPasswordError]=useState(false); //mostrar mensaje error password 
     const [mensajePassword,setMensajePassword]=useState(''); //mensaje password
-
+    
     const blockSpace =(evt)=>{  // bloquear espacios en blanco
         if (evt.keyCode ===32) evt.preventDefault();
     }
-    
+
     const loginIn =()=>{
         const usuarioLogin = document.getElementById('userLogin');
         const passwordLogin = document.getElementById('passwordLogin');
-        console.log(data.listRegister)
-       
+
         if (data.listRegister.length===0){
             if(usuario===''){ //error si no se ingresa usuario
                 setMensajeUsuario('Ingrese el Usuario');
@@ -57,7 +58,8 @@ const Login =()=>{
                 },5000)
             }      
         }    
-        let users = data.listRegister.find(element=>element.name===usuario) //buscar si existe el usuario
+        let users = data.listRegister.find(element=>element.name===usuario.toLowerCase()) //buscar si existe el usuario
+        
         if (usuario===''){  //error si no se ingresa usuario
             setMensajeUsuario('Ingrese el Usuario');
             usuarioLogin.classList.add('is-invalid');
@@ -79,7 +81,7 @@ const Login =()=>{
                 document.getElementById('formInput').reset()                
             },3000)
         }
-        else if (usuario === users.name && contraseña ===''){  //error no se ingreso contraseña
+        else if (usuario.toLowerCase() === users.name && contraseña ===''){  //error no se ingreso contraseña
             setMensajePassword('Ingrese la contraseña');
             passwordLogin.classList.add('is-invalid');
             setPasswordError(true);
@@ -88,7 +90,7 @@ const Login =()=>{
                 setPasswordError(false);
             },5000)
         }
-        else if (usuario === users.name && contraseña !==users.password){ //error constraseña incorrecta
+        else if (usuario.toLowerCase() === users.name && contraseña !==users.password){ //error constraseña incorrecta
             setMensajePassword('Contraseña incorrecta');
             passwordLogin.classList.add('is-invalid');
             setPasswordError(true);
@@ -99,15 +101,24 @@ const Login =()=>{
                 passwordLogin.value=''
             },5000)
         }
-        else if (usuario=== users.name && contraseña === users.password){  //usuario correcto
+        else if (usuario.toLowerCase()=== users.name && contraseña === users.password){  //usuario correcto
             let idUser = users.id
             let userActivo = data.listRegister.find(element=>element.id ===idUser)
-            console.log(userActivo);
             data.setUserActive(userActivo)
-            data.setActiveLogin(true);
-            setUsuario('');
-            setContraseña('');
-            navegar('/')
+            data.setActiveLogin(true);    
+            let usu = userActivo.name; //traer datos de usuario activo
+            let dataAnterior = JSON.parse(localStorage.getItem(`usuario${usu}`));  //traer datos guardados de compras no finalizadas         
+               
+            if (dataAnterior !==null){   // setear los valores por usuario de los productos que estan en el carrito y no fueron comprados
+               if (usu=== dataAnterior.user){
+                   compras.setCartlist(dataAnterior.carrito)
+                   compras.setSumarCant(dataAnterior.widget)
+                   compras.setSubtotal(dataAnterior.subtotales)
+               }
+            }
+            setUsuario('');  // reestablecer datos de input usuario
+            setContraseña(''); //reestablecer datos de input password
+            navegar('/')  //ir a login
         }
     }
 
@@ -140,7 +151,7 @@ const Login =()=>{
                             />
                             { passwordError && <p className={style.errorUsuario}>{mensajePassword}</p>}
                             <Link to='/register'style={{textDecoration:'none'}}><p className={style.linkRegistrar}>Registrarse</p></Link>
-                            <Button variant='contained'className={style.buttonLogin}onClick={loginIn}>Ingresar</Button>
+                            <Button variant='contained'className={style.buttonLogin} onClick={loginIn}>Ingresar</Button>
                         </form>              
                     </div>
                 </div>

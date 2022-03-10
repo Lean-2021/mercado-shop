@@ -10,8 +10,7 @@ export const ModalConfirmacion =(props)=>{
        props.cancelar();
     }
     
-    const aceptar =()=>{
-        
+    const aceptar =()=>{    
         props.aceptar();
     }
     
@@ -33,10 +32,11 @@ export const ModalConfirmacion =(props)=>{
                 open={props.mostrar}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+                className={style.modalConfirm}
             >
                 <Box sx={styleBox}>
                     <div className={`row ${style.modalDeleteItem}`}>
-                        <p className="text-center"><span className="text-center me-3"><img src={logo}alt="logo"width="25"/></span>Mercado - Shop</p>
+                        <p className={`text-center ${style.titleModal}`}><span className="text-center me-3"><img src={logo}alt="logo"width="25"/></span>Mercado - Shop</p>
                     </div>
                     <div className='row text-center pt-3 pb-2'>
                         <p><b><i>{props.text}</i></b></p>

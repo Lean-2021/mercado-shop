@@ -20,8 +20,13 @@
     font-weight: bold;
 }
 
-@media only screen and(max-width:500px){
+@media only screen and(max-width:576px){ /*resoluciones pequeñas*/
     .count{
         padding-left:30px;
+    }
+}
+@media (min-width:576px) and (max-width:768px){  /*resoluciones medianas*/
+    .count{
+        transform: scale(1.5);
     }
 }

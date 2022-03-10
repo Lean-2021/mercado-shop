@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Mercado Shop        :fa-desktop:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+###  Tienda de productos informáticos
+#### Proyecto creado con fines educativos
 
-## Available Scripts
+La tienda cuenta con un catálogo de 20 productos. Podemos buscar por categorias, marcas,  modelo. Seleccionando los productos que deseemos comprar, una vez finalizada la compra se mostrara un mensaje con el número de orden de compra y el detalle de los productos comprados.
 
-In the project directory, you can run:
 
-### `npm start`
+------------
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+###  - Comienzo :fa-play-circle:
 
-### `npm test`
+El proyecto fue credo con** React JS**, una vez creada nuestra aplicación con el siguiente comando en nuestra terminal:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npx-create-react-app my-app`
 
-### `npm run build`
+se utilizaron otras herramientes que debemos tener instaladas para su correcto funcionamiento
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+###### 1. Bootstrap
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm install bootstrap`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+###### 2. Material UI
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+// width npm
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm install @mui/material @emotion/react @emotion/styled`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`npm install @mui/material @mui/styled-engine-sc styled-components`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`npm install @mui/icons-material`
 
-## Learn More
+// Roboto Font
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+/>`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+// Font Icons
 
-### Code Splitting
+`<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+###### 3.  Font Awesome
 
-### Analyzing the Bundle Size
+//width npm
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Add SVG Core**
 
-### Making a Progressive Web App
+`npm i --save @fortawesome/fontawesome-svg-core
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Add Icon Packages Free**
 
-### Advanced Configuration
+`npm i --save @fortawesome/free-solid-svg-icons`
+`npm i --save @fortawesome/free-regular-svg-icons**`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Add the React Component**
 
-### Deployment
+`npm i --save @fortawesome/react-fontawesome@latest
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+###### 4. React-router-dom
 
-### `npm run build` fails to minify
+`npm i react-router-dom`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+------------
+
+#### Construido con  :fa-paper-plane:
+
+- **[React JS](https://es.reactjs.org/ "React JS")**
+
+- **[Bootstrap](https://getbootstrap.com/ "Bootstrap")**
+
+- **[Material UI](https://mui.com/ "Material UI")**
+
+- **[Font Awesome](https://fontawesome.com/ "Font Awesome")**
+
+- **JavaScript**
+
+- **CSS**
+
+------------
+
+####  GitHub Page
+
+
+------------
+
+
+#### Imagenes del Proyecto
+
+
+######  Home
+![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop1.png?alt=media&token=6d2acf71-0118-41c1-b2c5-a52539a71148)
+
+
+######  Detail Producto
+
+
+![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop2.png?alt=media&token=f3f9bb2a-29ec-4833-a443-265d816f7cd6)
+
+######  Products Cart
+
+![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop3.png?alt=media&token=5c52d767-63ff-49d8-8e41-b615e2e6baa0)
+
+------------
+
+##### Autor
+ &copy;Leandro Wagner  :fa-rocket: :fa-hand-o-up: :fa-linkedin: 
+ 
+
+------------

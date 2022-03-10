@@ -105,3 +105,72 @@
         margin-top:1px;
     }
 }
+@media (min-width:576px) and (max-width:768px){  /* resoluciones medianas*/
+    .cart-row{
+        position:relative;
+        height:350px;
+        margin-left:8px;
+        margin-top:50px;
+        margin-bottom: 30px;
+        width:95%;
+    }
+    .cart-borrar-item{
+        position:absolute;
+        top:-40px;
+        right:10px;
+    }
+    .botones{
+        margin-left:100px;
+        margin-top:90px;
+    }
+    .boton-seguir{
+        transform: scale(1.4);
+        width:210px;
+    }
+    .boton-limpiar{
+        transform: scale(1.4);
+        width:210px;
+        margin-left:80px;
+    }
+    .boton-seguir-solo{
+        transform: scale(1.5);
+        margin-top:150px;
+        margin-left:160px;
+        width:210px;
+    }
+    .cart-row-detail{
+        position:relative;
+        display: flex;
+        margin-bottom: 250px;
+        margin-top: -130px;
+        width:100%;
+        font-size: 30px;
+        margin-left:70px;
+    }
+    .detalle-cantidades{
+        margin-top:1px;
+    }
+    .compra-detail-title{
+        font-size: 35px;
+    }
+    .compra-total-detail{   /*texto del total de la compra*/
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .compra-detail-pago{   /* estilo detalle pago total de la compra*/
+        font-weight: bolder;
+        font-size: 40px;
+        margin-top:-3px;
+    }
+    .cart-marca-modelo{ 
+        margin-top:30px;
+        transform: scale(1.3);
+    }
+    .cart-cant-precio{
+        transform: scale(1.3);
+    }
+    .boton-seguir-limpiar{
+        margin-top: 90px;
+        height: 20vh;
+    }
+}

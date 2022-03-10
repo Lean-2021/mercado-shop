@@ -63,10 +63,13 @@ export const Cart =()=>{
             })
             .then(()=>setLoadBack(false)) //ocultar backdrop
             .catch(error => console.log(error))
+
+        let userLogin = user.userActive.name;  // guardar en una variable el nombre del usuario logeado    
+        localStorage.removeItem(`usuario${userLogin}`)  //borrar datos guardados de compra al finalizar la compra
     }
-        const ocultarCompra =()=>{  //ocultar modal de finalizar compra 
-            setModalFinalizar(false);
-        }
+    const ocultarCompra =()=>{  //ocultar modal de finalizar compra 
+        setModalFinalizar(false);
+    }
 
     useEffect(()=>{    //actualizar costo de envío del producto según el valor de la compra
         switch (true){
@@ -97,8 +100,6 @@ export const Cart =()=>{
         setDeleteItem(true)
         setProducto(id)  //almacenar el valor del id del item a eliminar
     }
-
-
     //********************************************************************************************************** 
     // motrar modal limpiar carrito (aceptar / Cancelar)
     const cleanCarrito =()=>{

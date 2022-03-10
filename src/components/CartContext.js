@@ -38,8 +38,6 @@ const CartContextProvider =({children})=>{
         )
         sumarPrecio(item.precio,cant) //llamar a funcion para sumar precios de los productos
     }
-  
-    
     const removeItem=(id)=>{  //remover producto del carrito
         const filtrar  = cartList.filter(item=>item.id!==id) //array nuevo con productos de distinto Id al seleccionado
         const filtrarPrecio = cartList.filter(item=>item.id===id) //array con producto de mismo ID 
@@ -57,8 +55,7 @@ const CartContextProvider =({children})=>{
         else{
             setSumarCant(0);
             setSubtotal(0);
-        }
-        
+        }   
     }    
    
     const clearCart=()=>{  //borrar todos los productos del carrito
@@ -75,10 +72,9 @@ const CartContextProvider =({children})=>{
        const precioProducto = precio * cantidad;
        setSubtotal(subtotal + precioProducto)
     }
-
-
+    
     return(
-        <CartContext.Provider value={{cartList, addItem, removeItem,clearCart,agregarCantidad,sumarCant,subtotal,dateOrder,setDateOrder,setCartlist}}>
+        <CartContext.Provider value={{cartList, addItem, removeItem,clearCart,agregarCantidad,sumarCant,subtotal,dateOrder,setDateOrder,setCartlist,setSumarCant,setSubtotal}}>
             {children}
         </CartContext.Provider>
     )

@@ -38,7 +38,7 @@ export const ItemDetail =(props)=>{
     }
     return(
         <article className="container"style={{textAlign:'start'}}>
-            <div className="card mb-3 card-item-detail"><Link to='/' className="text-end"><span className="btnClose"><FontAwesomeIcon icon={faTimes}color="grey"className="boton"/></span></Link>
+            <div className="card mb-3 card-item-detail"><Link to='/' className="text-end buttonClose"><span className="btnClose"><FontAwesomeIcon icon={faTimes}color="grey"className="boton"/></span></Link>
                 <div className="row g-0">
                     <div className="col-md-4">
                         <img src={props.imagen} className="img-fluid rounded-start imagen-description" alt="Imagen Producto"/>
@@ -64,10 +64,10 @@ export const ItemDetail =(props)=>{
                                         <section className="boton-count">
                                             <ItemCount cantidad={itemCount}stock ={props.stock}onAdd={onAdd}/>    
                                         </section>
-                                            :(<Link to='/cart'className="boton-finalizar-compra"><Button variant="contained"color="error"className="mt-5 mb-5 p-4">Ver Compras</Button></Link>)       
+                                            :(<Link to='/cart'className="boton-finalizar-compra"><Button variant="contained"color="error"className="mt-5 mb-5 p-4 btn-ver-compras">Ver Compras</Button></Link>)       
                             
                                     :(
-                                        <Button variant='contained'color='error' style={{width:'200px',height:'50px',marginTop:'30px'}} onClick={login}>Login</Button>
+                                        <Button variant='contained'color='error'className='btn-login'onClick={login}>Login</Button>
                                     )
                             }
                             {

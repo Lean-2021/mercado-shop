@@ -79,3 +79,10 @@
         margin-left: -20px;
     }
 }
+
+@media (min-width:576px) and (max-width:768px){  /* resoluciones medianas*/
+    .section-footer{
+        margin-top:45%;
+        height:350px;
+    }
+}

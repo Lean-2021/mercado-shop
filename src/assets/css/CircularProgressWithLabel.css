@@ -1,12 +1,18 @@
 .circle-progress{
-    /* height:100vh; */
     margin-top:20%
 }
 /* Resoluciones pequeñas */
-@media only screen and (max-width:500px){
+@media only screen and (max-width:576px){
     .circle-progress{
         height:auto;
         margin-top: 50%;
         margin-bottom: 15%;
     }
 }
+@media (min-width:576px) and (max-width:768px){  /* resoluciones medianas*/
+    .circle-progress{
+        height:auto;
+        margin-top: 55%;
+        margin-bottom: 50%;
+    }
+} 

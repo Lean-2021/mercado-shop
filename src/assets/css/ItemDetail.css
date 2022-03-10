@@ -1,13 +1,17 @@
-.btnClose{
-    font-size: 30px;
+.buttonClose{
+    right:20px;
+    top:10px;
+    position:absolute;
+    font-size: 25px;
 }
 .boton:hover{
     transform: scale(1.1);
     transition: all 1s;
-    color:black;
+    color:red;
 }
 
 .card-item-detail{
+    position:relative;
     padding:50px;
     margin-top:70px;
     box-shadow:1px 1px 4px 2px black; 
@@ -51,9 +55,14 @@
 .boton-finalizar-compra{
     text-decoration: none;  
 }
+.btn-login{
+    width:200px;
+    height:50px;
+    margin-top:30px;
+}
 
 /* para dispositivos mobiles */
-@media only screen and (max-width:500px){
+@media only screen and (max-width:576px){
     .body-description{
         margin-top:10%;
         margin-left:-20%;
@@ -76,9 +85,63 @@
     .boton-count{
         margin-left:9px;
     }
-    .btnClose{
-        position:absolute;
-        top:10px;
+    .buttonClose{
         right:10px;
+        top:8px;
+        position:absolute;
+        font-size: 20px;
+    }
+    .btn-login{
+        transform: translateX(22px);
+        width:100%;
+    }
+    
+}
+
+@media (min-width:576px) and (max-width:768px){  /* resoluciones medianas*/
+    .card-item-detail{
+        position:relative;
+        margin-left:-16%;
+        width:133%;
+        margin-top: 80px;
+    }
+    .imagen-description:hover{
+        transform:scale(1.05);
+        transition: all 1s;
+    }
+    .text-description{
+        font-size:22px;
+        margin-left:-1%;
+        width:500px;
+        text-align: left;
+    }
+    .body-description{
+        margin-top:10%;
+        margin-left:2%;
+    }
+    .buttonClose{
+        right:15px;
+        top:5px;
+        position:absolute;
+        font-size: 25px;
+    }
+    .boton-count{
+        margin-left:23%;
+        transform: translateY(40px);
+        margin-bottom: 80px;
+    }
+    .btn-ver-compras{
+        transform: scale(1.2);
+    }
+    .btn-login{
+        width:300px;
+        height:60px;
+        transform: translate(30%);    
+    }
+    .btn-ver-compras{
+        width:400px;
+    }
+    .boton-finalizar-compra{
+        margin-left: 9%;
     }
 }
