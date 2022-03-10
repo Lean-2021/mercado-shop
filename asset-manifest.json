@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mercado-shop/static/css/main.3e360ff0.css",
+    "main.js": "/mercado-shop/static/js/main.6c4b5295.js",
+    "index.html": "/mercado-shop/index.html",
+    "main.3e360ff0.css.map": "/mercado-shop/static/css/main.3e360ff0.css.map",
+    "main.6c4b5295.js.map": "/mercado-shop/static/js/main.6c4b5295.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e360ff0.css",
+    "static/js/main.6c4b5295.js"
+  ]
+}
