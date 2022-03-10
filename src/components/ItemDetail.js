@@ -38,7 +38,7 @@ export const ItemDetail =(props)=>{
     }
     return(
         <article className="container"style={{textAlign:'start'}}>
-            <div className="card mb-3 card-item-detail"><Link to='/' className="text-end buttonClose"><span className="btnClose"><FontAwesomeIcon icon={faTimes}color="grey"className="boton"/></span></Link>
+            <div className="card mb-3 card-item-detail"><Link to='/mercado-shop' className="text-end buttonClose"><span className="btnClose"><FontAwesomeIcon icon={faTimes}color="grey"className="boton"/></span></Link>
                 <div className="row g-0">
                     <div className="col-md-4">
                         <img src={props.imagen} className="img-fluid rounded-start imagen-description" alt="Imagen Producto"/>

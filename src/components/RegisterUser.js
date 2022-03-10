@@ -37,7 +37,7 @@ export const RegisterUser=()=>{
     const ocultar =()=>{  // ocultar SnackBar
         setSnack(false);
         setTimeout(()=>{
-            navigation('/')
+            navigation('/mercado-shop')
         },100)
     }
     
@@ -231,7 +231,7 @@ export const RegisterUser=()=>{
         <div className='container text-center'>
             <div className='row'>
                 <div className={`col-md-4 offset-md-4 ${style.formContainer}`}>
-                <Link to='/'className={style.boton}><span><FontAwesomeIcon icon={faTimes} className={style.closeLogin}/></span></Link>
+                <Link to='/mercado-shop'className={style.boton}><span><FontAwesomeIcon icon={faTimes} className={style.closeLogin}/></span></Link>
                 {
                      snack &&  <Snack mostrar={snack}time={1000}ocultar={ocultar}text={`Usuario creado correctamente`}color={"success"}/>   
                 }    

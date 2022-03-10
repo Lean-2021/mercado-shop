@@ -75,7 +75,7 @@ const NavBar =()=>{
     return(
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container-fluid">
-                <Link to='/'className="navbar-brand nav-title"onClick={handleNavClick}><img src={logo} width="35"alt="logo web"className="me-3 logoWeb"/>Mercado Shop</Link>
+                <Link to='/mercado-shop'className="navbar-brand nav-title"onClick={handleNavClick}><img src={logo} width="35"alt="logo web"className="me-3 logoWeb"/>Mercado Shop</Link>
                 <button className="navbar-toggler" type="button" onClick={() => setShow(!show)} aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

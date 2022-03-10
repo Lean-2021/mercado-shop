@@ -117,7 +117,7 @@ const Login =()=>{
             }
             setUsuario('');  // reestablecer datos de input usuario
             setContraseña(''); //reestablecer datos de input password
-            navegar('/')  //ir a login
+            navegar('/mercado-shop')  //ir a login
         }
     }
 
@@ -126,7 +126,7 @@ const Login =()=>{
             <div className='container text-center'>
                 <div className='row'>
                     <div className={`col-md-4 offset-md-4 ${style.formContainer}`}>
-                        <Link to='/'className={style.boton}><FontAwesomeIcon icon={faTimes} className={style.closeLogin}/></Link>
+                        <Link to='/mercado-shop'className={style.boton}><FontAwesomeIcon icon={faTimes} className={style.closeLogin}/></Link>
                         <form id='formInput'className={`${style.formData}`}>
                             <label className='form-label pb-3'>Usuario</label>
                             <input
