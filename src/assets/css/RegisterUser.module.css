@@ -50,3 +50,58 @@
     color:red;
     font-weight: bold;
 }
+
+@media only screen and (max-width:576px){
+    .loginContainer{
+        height: 200vh;
+    }
+    .formContainer{
+        width:90%;
+        margin:auto;
+        margin-top: 130px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width:576px) and (max-width:768px){  /* resoluciones medianas*/
+    .formContainer{
+        margin-top: 200px;
+        min-width:120%;
+        margin-left:-10%;
+        height:auto;
+        padding:30px;
+    }
+    .formData label{
+        font-size: 30px;
+     }
+    .formData input{
+        font-size: 25px;
+    }
+    .linkRegistrar{
+        font-size: 25px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    .buttonRegister{      
+        transform: scale(1.5);
+        width:67%;
+        margin-bottom: 60px;
+    }
+    .closeLogin{
+        font-size: 28px;
+    }
+    input[type=checkbox]{
+        font-size: 30px;
+        margin-top:5px;
+    }
+    .labelTerminos{
+        font-size: 25px;
+        margin-bottom:30px;
+    }
+    .errorTerminos{
+        margin-top:-28px;
+        color:red;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+}

@@ -6,8 +6,6 @@ import { CartContext } from './CartContext';
 import { ModalList } from './ModalList';
 import { Button } from '@mui/material';
 
-
-
 const ModalMessage=(props)=>{
     const text = useContext(CartContext);
     const hoy=new Date(); //obtener fecha
@@ -35,6 +33,7 @@ const ModalMessage=(props)=>{
                 open={props.mostrar}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+                className='modal-container'
             >
                 <Box sx={style}>
                      <p className="modal-nombre text-center"><span className="text-center me-3"><img src={logo}alt="logo"width="25"/></span>Mercado - Shop</p>

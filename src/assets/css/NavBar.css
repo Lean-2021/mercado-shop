@@ -54,9 +54,59 @@
     margin-top:-48px;
     margin-left:82px;
 }
-@media only screen and (max-width:576px){
+@media only screen and (max-width:576px){  /* resoluciones pequeñas*/
     .dropdown-menu{
         width:370px;
         margin-bottom: 30px;
+    }
+    .menu-marcas::before{
+        display:none;
+    }
+    .menu-categorias::before{
+        display:none;
+    }
+}
+@media (min-width:576px) and (max-width:768px){  /* resoluciones medianas*/
+    .navbar-collapse{
+        padding:20px;
+    }
+    .navbar-brand{
+        font-size: 40px;
+    }
+    .logoWeb{
+        width:55px;
+    }
+    .nav-item{
+        font-size: 25px;
+    }
+    .dropdown-menu{
+        width: 100%;
+        margin:auto;
+        font-size: 22px;
+    }
+    .dropdown-item{
+        font-size:28px;
+    }
+    .menu-marcas::before{
+        margin-left:12%;
+    }
+    .menu-categorias::before{
+        margin-left:18%;
+    }
+    .buttonLogin{
+        font-size: 28px;
+    }
+    .inputSearch{
+        font-size:30px;
+    }
+    .user-name{
+        font-size: 30px;
+    }
+    .btn-salir{
+        font-size: 30px;
+        padding:5px;
+        padding-left:20px;
+        padding-right:20px;
+        margin-bottom: 15px;
     }
 }

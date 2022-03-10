@@ -12,3 +12,17 @@
     color: black;
     margin-top: 2px;
 }
+
+@media (min-width:576px) and (max-width:768px){  /* resoluciones medianas*/
+    .cartLogout{
+        font-size: 55px;
+    }
+    .cartShop{
+        font-size: 55px;
+    }
+    .cant{
+        font-size: 45px;
+        padding:30px;
+        transform: scale(1.5);
+    }
+}  

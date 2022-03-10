@@ -12,7 +12,6 @@ const SearchContainer =()=>{
     const buscar = useContext(SearchContext);
     const [load,setLoad] = useState(true); //estado del componente efecto circular de carga de datos al 100%
    
-
     useEffect(()=>{
         const searchProducts = async()=>{
             const querySnapshot = await getDocs(collection(db, "products"));
@@ -21,10 +20,9 @@ const SearchContainer =()=>{
             let texto2 = buscar.buscar.replace(/ /gi,'')
             for (let producto of datos){
                 if (producto.categoria === texto.toLowerCase()){
-
                     return datos.filter(element=>element.categoria===texto)  
                 }                    
-                else if (producto.marca === texto){
+                else if (producto.marca === texto.toLowerCase()){
                     return datos.filter(element=>element.marca===texto)
                 }
                 else if ((producto.modelo.toLowerCase()).replace(/-/gi,'') === texto){
@@ -39,7 +37,7 @@ const SearchContainer =()=>{
             .then((data)=>setSearchList(data))
             .then(()=>setLoad(false))
             .catch((error)=>console.log(error))
-},[buscar.buscar,buscar])
+},[buscar.buscar])
 
     return(
 

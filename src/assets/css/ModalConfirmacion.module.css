@@ -33,3 +33,29 @@
         margin-left: 100px;
     }
 }
+@media (min-width:576px) and (max-width:768px){  /* resoluciones medianas*/
+   
+    .modalConfirm{
+        transform: scale(1.5);
+        font-size: 20px;
+    }
+    .titleModal{
+        font-size: 25px;
+    }
+    .titleModal img{
+        width:30px;
+        margin-bottom: 5px;
+    }
+    .colConfirmar{
+        width:100px;
+        margin-top: 10px;
+        text-align: right;
+        margin-left:0px;
+    }
+    .colCancel{
+        width:200px;
+        margin-top: 10px;
+        text-align: right;
+        margin-left:-40px;
+    }
+}
