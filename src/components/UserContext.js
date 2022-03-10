@@ -7,14 +7,11 @@ const UserContextProvider =({children})=>{
    const [userActive,setUserActive]=useState('');
    const [activeLogin,setActiveLogin]=useState(false);
 
-<<<<<<< HEAD
-=======
     let usuarioAnterior = JSON.parse(localStorage.getItem('users')) // recuperar datos de usuarios en localStorage
     
     if (listRegister.length===0 && usuarioAnterior!==null){  //si hay usuarios registrados recuperar esos datos
         setListRegister(usuarioAnterior); //setear en la lista de usuarios los datos recuperados del localStorage
     }
->>>>>>> usuarios
    
    if(listRegister.length>0){  // guardar datos de registro de los usuarios
        localStorage.setItem('users',JSON.stringify(listRegister))

@@ -30,9 +30,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy":"gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -51,5 +51,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "La tienda cuenta con un catálogo de 20 productos. Podemos buscar por categorias, marcas,  modelo. Seleccionando los productos que deseemos comprar, una vez finalizada la compra se mostrara un mensaje con el número de orden de compra y el detalle de los productos comprados.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lean-2021/mercado-shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lean-2021/mercado-shop/issues"
   }
 }
