@@ -11,7 +11,7 @@ La tienda cuenta con un catálogo de 20 productos. Podemos buscar por categorias
 
 ##  - Comienzo  :beginner:
 
-El proyecto fue credo con** React JS**, una vez creada nuestra aplicación con el siguiente comando en nuestra terminal:
+El proyecto fue credo con React JS , una vez creada nuestra aplicación con el siguiente comando en nuestra terminal:
 
 `npx-create-react-app my-app`
 
@@ -97,18 +97,24 @@ se utilizaron otras herramientes que debemos tener instaladas para su correcto f
 
 ##### Home
 
-![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop1.png?alt=media&token=fc3baf20-6c7c-4473-9137-e5d65ccf9979)
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop1.png?alt=media&token=fc3baf20-6c7c-4473-9137-e5d65ccf9979)
 
 
 #####  Detail Producto
 
-![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop2.png?alt=media&token=b697260e-02a1-44f2-9734-f3d66224c04d)
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop2.png?alt=media&token=b697260e-02a1-44f2-9734-f3d66224c04d)
 
 #####  Products Cart
 
-![](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop3.png?alt=media&token=db5207f6-dac2-45fa-a08d-cc1da179f62f)
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/mercado-shop-8dc2a.appspot.com/o/proyecto%2Fmercadoshop3.png?alt=media&token=db5207f6-dac2-45fa-a08d-cc1da179f62f)
 
 ------------
 
 #### Autor    
  &copy;Leandro Wagner  :beginner:
+
+ ## 🔗 Links
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
+
+
