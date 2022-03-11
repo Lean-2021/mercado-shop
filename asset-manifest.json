@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/mercado-shop/static/css/main.3e360ff0.css",
-    "main.js": "/mercado-shop/static/js/main.dfe1d6ca.js",
+    "main.css": "/mercado-shop/static/css/main.a1770412.css",
+    "main.js": "/mercado-shop/static/js/main.62652e8b.js",
     "index.html": "/mercado-shop/index.html",
-    "main.3e360ff0.css.map": "/mercado-shop/static/css/main.3e360ff0.css.map",
-    "main.dfe1d6ca.js.map": "/mercado-shop/static/js/main.dfe1d6ca.js.map"
+    "main.a1770412.css.map": "/mercado-shop/static/css/main.a1770412.css.map",
+    "main.62652e8b.js.map": "/mercado-shop/static/js/main.62652e8b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e360ff0.css",
-    "static/js/main.dfe1d6ca.js"
+    "static/css/main.a1770412.css",
+    "static/js/main.62652e8b.js"
   ]
 }
