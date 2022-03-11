@@ -28,8 +28,9 @@
 }
 /* link de nav footer */
 .footer-nav{
-    margin-left:-5% ;
+    width:80%;
     display: flex;
+    margin-left: 9%;
     flex-flow: row wrap;
     list-style:none;
     justify-content: space-around;
@@ -58,6 +59,9 @@
 .footer-link-inactive{
     font-weight: lighter;
 }
+.item-fecha{   /*fecha del footer al hacer login*/
+    width:150px;
+}
 /* Resoluciones pequeñas */
 @media only screen and (max-width:576px){
     .section-footer{
@@ -74,6 +78,10 @@
     }
     .footer-nav{
         flex-direction: column;
+        margin-left:5%;
+    }
+    .item-fecha{
+        width:100%;
     }
     .copyright{
         margin-left: -20px;
@@ -83,6 +91,6 @@
 @media (min-width:576px) and (max-width:768px){  /* resoluciones medianas*/
     .section-footer{
         margin-top:45%;
-        height:350px;
+        height:270px;
     }
 }
