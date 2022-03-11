@@ -16,8 +16,8 @@ const SearchContainer =()=>{
         const searchProducts = async()=>{
             const querySnapshot = await getDocs(collection(db, "products"));
             const datos = querySnapshot.docs.map(document=>({id:document.id,...document.data()}));
-            let texto = buscar.buscar.replace(/-/gi,'');
-            let texto2 = buscar.buscar.replace(/ /gi,'')
+            let texto = buscar.buscar.replace(/-/gi,'').trim();
+            let texto2 = buscar.buscar.replace(/ /gi,'');
             for (let producto of datos){
                 if (producto.categoria === texto.toLowerCase()){
                     return datos.filter(element=>element.categoria===texto)  
