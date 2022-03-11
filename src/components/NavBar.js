@@ -45,7 +45,8 @@ const NavBar =()=>{
         // ****************************************************************************
         dato.setActiveLogin(false);
         datosCart.clearCart();  
-        setShow(false);    
+        setShow(false);
+        link('/mercado-shop');    
 
        }
         const cambio=()=>{   // cambio boton search nav
