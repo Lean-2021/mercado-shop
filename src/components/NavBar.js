@@ -113,7 +113,7 @@ const NavBar =()=>{
                                 <li><NavLink to="/category/mercusys"className="dropdown-item"onClick={handleNavClick}>Mercusys</NavLink></li>
                                 <li><NavLink to='/category/mikrotik'className="dropdown-item"onClick={handleNavClick}>Mikrotik</NavLink></li>
                                 <li><NavLink to='/category/samsung'className="dropdown-item"onClick={handleNavClick}>Samsung</NavLink></li>
-                                <li><NavLink to='/category/tp-Link'className="dropdown-item"onClick={handleNavClick}>Tp-Link</NavLink></li>
+                                <li><NavLink to='/category/tp-link'className="dropdown-item"onClick={handleNavClick}>Tp-Link</NavLink></li>
                                 <li><NavLink to='/category/ubiquiti'className="dropdown-item"onClick={handleNavClick}>Ubiquiti</NavLink></li>
                             </ul>
                         </li>

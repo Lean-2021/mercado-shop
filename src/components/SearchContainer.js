@@ -22,8 +22,11 @@ const SearchContainer =()=>{
                 if (producto.categoria === texto.toLowerCase()){
                     return datos.filter(element=>element.categoria===texto)  
                 }                    
-                else if (producto.marca === texto.toLowerCase()){
-                    return datos.filter(element=>element.marca===texto)
+                else if (producto.marca.replace(/-/gi,'') === texto.toLowerCase()){
+                    return datos.filter(element=>element.marca.replace(/-/gi,'')===texto)
+                }
+                else if (producto.marca.replace(/-/gi,'') === texto2.toLowerCase()){
+                    return datos.filter(element=>element.marca.replace(/-/gi,'')===texto2)
                 }
                 else if ((producto.modelo.toLowerCase()).replace(/-/gi,'') === texto){
                     return datos.filter(element=>element.modelo.toLowerCase().replace(/-/gi,'')===texto)

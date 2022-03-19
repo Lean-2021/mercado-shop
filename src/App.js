@@ -11,6 +11,7 @@ import Login from './components/Login';
 import { RegisterUser } from './components/RegisterUser';
 import UserContextProvider from './components/UserContext';
 import PrivateRoute from './components/PrivateRoute';
+import Error404 from './pages/Error404';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
               <Route path='/search/:searchId'element={<SearchContainer/>}/>
               <Route path='/login'element={<Login/>}/>
               <Route path='/register' element={<RegisterUser/>}/>
+              <Route path='*'element={<Error404/>}/>
             </Routes>
             <Footer/>
           </BrowserRouter>
