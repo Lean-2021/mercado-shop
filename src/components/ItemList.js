@@ -1,22 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import Item from "./Item";
 import '../assets/css/ItemList.css';
 import CircularProgressWithLabel from '../components/CircularProgressWithLabel';
-import { useParams} from "react-router-dom";
+import { useParams,useNavigate} from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import db from "../utils/firebaseConfig";
-
 
 const ItemList = ()=>{
 
     const [itemList,setItemList] = useState([]);  //estado inicial de productos vacio
     const [load,setLoad] = useState(true); //estado del componente efecto circular de carga de datos al 100%
     const {categoryId} = useParams();
-    const errorDatos =()=>{
-        console.log('error de datos');
-    } 
+    const errorPage= useNavigate();    
+    
+    
     useEffect(()=>{  //obtener datos de FireBase          
         setLoad(true);
+        
+        const errorDatos =()=>{
+            console.log('error de datos');
+            errorPage('/error');
+        } 
+        
         
         switch (categoryId){
             case undefined:    // cuando no se elige un parametro mostrar todos los productos      
@@ -28,7 +33,7 @@ const ItemList = ()=>{
                 fireBaseProducts()
                     .then( data => setItemList(data))
                     .then(()=>setLoad(false))
-                    .catch(()=>errorDatos())                  
+                    .catch(()=>errorDatos())              
             break;
             case 'novedades':   // cuando se selecciona novedades filtrar productos por el año 2022  
                 const fireBaseNovedades = async()=>{
@@ -40,7 +45,7 @@ const ItemList = ()=>{
                 fireBaseNovedades()
                     .then( data => setItemList(data))
                     .then(()=>setLoad(false))
-                    .catch(()=>errorDatos())  
+                    .catch(()=>errorDatos());  
             break;
             case 'ofertas':  // cuando se selecciona ofertas filtrar productos que tengan un precio menor a $30.000
                 const fireBaseOfertas = async()=>{
@@ -80,7 +85,7 @@ const ItemList = ()=>{
                     .catch(()=>errorDatos())
             break;                      
             }
-    },[categoryId]);
+    },[categoryId,errorPage]);
     return(
         <div className="ItemListContainer container-fluid text-center">
             {
