@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import {ItemDetail} from './ItemDetail';
 import CircularProgressWithLabel from '../components/CircularProgressWithLabel';
-import {useNavigate, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import '../assets/css/ItemDetailContainer.css';
 import { doc, getDoc } from "firebase/firestore";
 import db from "../utils/firebaseConfig";
@@ -9,14 +9,13 @@ import db from "../utils/firebaseConfig";
 const ItemDetailContainer =()=>{
     const [loading,setLoading]=useState(true);
     const [itemDetail,setItemDetail]=useState([]);
-    const {id} = useParams();
-    const goTo = useNavigate();
-    
+    const {id} = useParams(); 
+
+    const errorItem =()=>{
+        window.location='';
+    }
     
     useEffect(()=>{
-        const errorItem=()=>{ 
-            goTo('/error')  
-        }
          setLoading(true);
          
         const firebaseItem = async() =>{
@@ -37,7 +36,7 @@ const ItemDetailContainer =()=>{
             .then((data)=>setItemDetail(data))
             .then (()=>setLoading(false))
             .catch(()=>errorItem())   
-    },[id,goTo]);
+    },[id]);
 
     return(
         <section className="card-detail container-fluid text-center pt-5">

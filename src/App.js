@@ -1,7 +1,7 @@
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import {Routes, Route, HashRouter} from 'react-router-dom';
 import {Footer} from './components/Footer'; 
 import { Cart } from './components/Cart';
 import CartContextProvider from './components/CartContext';
@@ -19,7 +19,7 @@ function App() {
     <UserContextProvider>  
       <SearchContextProvider>  
         <CartContextProvider>  
-          <BrowserRouter>
+          <HashRouter>
             <NavBar/>
             <Routes>
               <Route path='/mercado-shop' element={<ItemListContainer/>}/>
@@ -31,11 +31,10 @@ function App() {
               <Route path='/search/:searchId'element={<SearchContainer/>}/>
               <Route path='/login'element={<Login/>}/>
               <Route path='/register' element={<RegisterUser/>}/>
-              <Route path='/error'element={<Error404/>}/>
-              <Route path='*'element={<Navigate to ='/error'/>}/>
+              <Route path='*'element={<Error404/>}/>
             </Routes>
             <Footer/>
-          </BrowserRouter>
+          </HashRouter>
         </CartContextProvider>
       </SearchContextProvider>
     </UserContextProvider>
