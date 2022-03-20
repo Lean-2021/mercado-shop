@@ -22,7 +22,7 @@ export const Footer =()=>{
         <footer className="container-fluid section-footer">
             <div className="row pt-5">
                 <div className="col-md-12 text-center">
-                    <Link to='/mercado-shop' className="footer-title-link"><p><span><img src={logo}alt="logo mercado"width="40"className="footer-title-img me-3"/></span><span className="footer-title">Mercado Shop</span></p></Link>
+                    <Link to='/' className="footer-title-link"><p><span><img src={logo}alt="logo mercado"width="40"className="footer-title-img me-3"/></span><span className="footer-title">Mercado Shop</span></p></Link>
                 </div>
             </div>     
             <div className="row">

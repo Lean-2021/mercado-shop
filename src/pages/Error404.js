@@ -16,7 +16,7 @@ export default function Error404 (){
                     <div className={`col-md-12 ${style.infoError}`}>
                         <h2>UPS...ocurrió un error</h2>
                         <h3 className='pt-2'>vuelve a intentarlo</h3>
-                       <p className={style.linkError}><Link to='/mercado-shop'style={{textDecoration:'none'}}><img src={logo}alt="logo"className={style.logoError}/><span className={style.mercadoLink}>Mercado-Shop</span></Link></p>
+                       <p className={style.linkError}><Link to='/'style={{textDecoration:'none'}}><img src={logo}alt="logo"className={style.logoError}/><span className={style.mercadoLink}>Mercado-Shop</span></Link></p>
                     </div>
                 </div>
             </div>

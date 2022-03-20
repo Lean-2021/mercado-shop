@@ -120,7 +120,7 @@ export const Cart =()=>{
                 <section className="container boton-seguir-limpiar">
                 <div className="row">           
                     <div className="col-md-12 mt-5 boton-seguir-solo">
-                        <Link to='/mercado-shop'><Button variant="contained" color="primary"className="text-start">Seguir Comprando</Button></Link>
+                        <Link to='/'><Button variant="contained" color="primary"className="text-start">Seguir Comprando</Button></Link>
                     </div>
                 </div>
                 </section>
@@ -128,7 +128,7 @@ export const Cart =()=>{
                     <section className="container botones container-sm">
                         <div className="row">           
                             <div className="col-md-6 mt-5 text-start boton-seguir">
-                                <Link to='/mercado-shop'><Button variant="contained"color="primary">Seguir Comprando</Button></Link>
+                                <Link to='/'><Button variant="contained"color="primary">Seguir Comprando</Button></Link>
                             </div>
                             <div className="col-md-6 mt-5 text-end boton-limpiar">
                                 <Button variant="contained" color="error"onClick={cleanCarrito}>Limpiar Carrito</Button>

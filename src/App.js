@@ -22,7 +22,7 @@ function App() {
           <HashRouter>
             <NavBar/>
             <Routes>
-              <Route path='/mercado-shop' element={<ItemListContainer/>}/>
+              <Route path='/' element={<ItemListContainer/>}/>
               <Route path='/item/:id' element ={<ItemDetailContainer/>}/>
               <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
               <Route element={<PrivateRoute/>}>

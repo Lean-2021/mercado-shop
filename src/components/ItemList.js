@@ -2,7 +2,7 @@ import { useEffect, useState} from "react";
 import Item from "./Item";
 import '../assets/css/ItemList.css';
 import CircularProgressWithLabel from '../components/CircularProgressWithLabel';
-import { useParams} from "react-router-dom";
+import { useParams,useNavigate} from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import db from "../utils/firebaseConfig";
 
@@ -12,13 +12,15 @@ const ItemList = ()=>{
     const [itemList,setItemList] = useState([]);  //estado inicial de productos vacio
     const [load,setLoad] = useState(true); //estado del componente efecto circular de carga de datos al 100%
     const {categoryId} = useParams();
+    const goTo=useNavigate();
     
     useEffect(()=>{  //obtener datos de FireBase          
         setLoad(true);
         
         const errorDatos =()=>{
             console.log('error de datos');
-            window.location='';
+            goTo('/error');
+            window.location.reload();
         } 
         
         switch (categoryId){
@@ -83,7 +85,7 @@ const ItemList = ()=>{
                     .catch(()=>errorDatos())
             break;                      
             }
-    },[categoryId]);
+    },[categoryId,goTo]);
     return(
         <div className="ItemListContainer container-fluid text-center">
             {
