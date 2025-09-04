@@ -83,11 +83,6 @@ se utilizaron otras herramientes que debemos tener instaladas para su correcto f
 
 - **CSS**
 
-------------
-
-##  GitHub Page
-
-[Mercado Shop](https://lean-2021.github.io/mercado-shop/ "Mercado Shop")
 
 ------------
 
